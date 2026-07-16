@@ -23,6 +23,7 @@ static/results/*
 !static/results/.gitkeep
 
 detect_history.json
+功能记录.md
 
 *.tmp
 *.bak
