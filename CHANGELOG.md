@@ -4,8 +4,12 @@
 
 ## Unreleased
 
+- 增加 Windows 一键本地启动器，自动准备 Python、虚拟环境和项目依赖。
+- 增加 GitHub Actions Windows 完整包构建与 Release 发布流程。
+- GitHub Release 完整包包含两个 ONNX 模型，解压后可直接运行启动器。
+- README 移除多张页面预览，预留单张最终项目展示图位置。
+- 移除 Render 一键部署入口与 Blueprint 配置。
 - 增加 Dockerfile 与容器运行配置。
-- 增加 Render Blueprint、一键部署入口和部署说明。
 - Docker 启动命令支持通过 `PORT` 环境变量动态选择监听端口。
 - 增加 Hugging Face Docker Space 部署脚本和使用文档。
 - 移除已失效的固定服务器体验地址，保留本地与云平台部署方式。

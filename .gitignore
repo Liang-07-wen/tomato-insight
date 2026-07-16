@@ -30,6 +30,7 @@ detect_history.json
 *.old
 *.log
 *.zip
+dist/
 
 .vscode/
 .idea/

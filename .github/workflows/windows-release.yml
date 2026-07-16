@@ -1,0 +1,46 @@
+name: Build Windows Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source and models
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Download Git LFS models
+        run: git lfs pull
+
+      - name: Build Windows package
+        shell: pwsh
+        run: ./scripts/package-windows-release.ps1
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tomato-Insight-Windows
+          path: dist/Tomato-Insight-Windows.zip
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $asset = "dist/Tomato-Insight-Windows.zip"
+          gh release create $tag $asset `
+            --title "Tomato Insight $tag" `
+            --notes "Windows 本地一键运行完整包。下载并解压后，双击 TomatoInsightLauncher.exe 即可自动准备环境、安装依赖、启动网站并打开浏览器。"

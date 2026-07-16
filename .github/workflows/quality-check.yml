@@ -44,14 +44,42 @@ jobs:
       - name: Check PowerShell deployment script
         shell: pwsh
         run: |
-          $tokens = $null
-          $errors = $null
-          [System.Management.Automation.Language.Parser]::ParseFile(
-            (Resolve-Path "./scripts/deploy-huggingface-space.ps1"),
-            [ref]$tokens,
-            [ref]$errors
-          ) | Out-Null
-          if ($errors.Count -gt 0) {
-            $errors | Format-List
-            exit 1
+          $scripts = @(
+            "./scripts/deploy-huggingface-space.ps1",
+            "./scripts/build-windows-launcher.ps1",
+            "./scripts/package-windows-release.ps1"
+          )
+          foreach ($script in $scripts) {
+            $tokens = $null
+            $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile(
+              (Resolve-Path $script),
+              [ref]$tokens,
+              [ref]$errors
+            ) | Out-Null
+            if ($errors.Count -gt 0) {
+              Write-Host "PowerShell syntax error: $script"
+              $errors | Format-List
+              exit 1
+            }
+          }
+
+  windows-launcher:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Build Windows launcher
+        shell: pwsh
+        run: ./scripts/build-windows-launcher.ps1
+
+      - name: Confirm launcher output
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath "./TomatoInsightLauncher.exe")) {
+            throw "TomatoInsightLauncher.exe was not generated."
           }
