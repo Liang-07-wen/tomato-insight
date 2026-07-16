@@ -1,0 +1,15 @@
+{
+  "module": "leaf",
+  "status": "ready",
+  "model_name": "leaf-best",
+  "model_file": "best.onnx",
+  "model_format": "onnx",
+  "label_files": [
+    "classes.json",
+    "classes.txt"
+  ],
+  "class_count": 10,
+  "input_size": 640,
+  "confidence_threshold": 0.5,
+  "iou_threshold": 0.45
+}

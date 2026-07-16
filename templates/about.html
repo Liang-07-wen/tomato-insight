@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目介绍 | Tomato Insight</title>
+    <link rel="icon" type="image/png" href="/static/assets/logo/logo-icon.png">
+    <link rel="stylesheet" href="/static/css/global.css?v={{ global_css_version }}">
+    <link rel="stylesheet" href="/static/css/about.css?v={{ about_css_version }}">
+    <link rel="stylesheet" href="/static/css/responsive.css?v={{ responsive_css_version }}">
+</head>
+<body class="home-body about-body" data-nav-animation="enabled">
+    <nav class="site-nav home-nav">
+        <a class="brand" href="/">
+            <img class="brand-logo" src="/static/assets/logo/logo-icon.webp" alt="" width="42" height="42" decoding="async">
+            <span class="brand-wordmark" aria-label="Tomato Insight">
+                <span class="brand-word brand-word-tomato" aria-hidden="true"><span>Tom</span><span class="brand-tomato-a">a</span><span>to</span></span>
+                <span class="brand-word brand-word-insight" aria-hidden="true"><span>Ins</span><span class="brand-insight-i">i</span><span>ght</span></span>
+            </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primaryNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="primaryNav">
+            <a href="/">首页</a>
+            <a href="/leaf">叶片检测</a>
+            <a href="/fruit">果实检测</a>
+            <a class="active" href="/about">项目介绍</a>
+            <a href="/developer">关于我们</a>
+        </div>
+    </nav>
+    <button class="nav-overlay" type="button" aria-label="关闭导航菜单" hidden></button>
+
+    <svg class="about-icon-sprite" aria-hidden="true">
+        <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M5 19c9 0 14-7 14-14-7 0-14 5-14 14Z"/><path d="M5 19c3.5-5.4 7.3-8.6 14-14"/></symbol>
+        <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+        <symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"/></symbol>
+        <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.6-2h6.8L17 8h3v11H4V8Z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+        <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 0-8 6 6 0 0 0-11.4-1.9A5 5 0 0 0 7 18Z"/><path d="M12 16V8M8.8 11.2 12 8l3.2 3.2"/></symbol>
+        <symbol id="icon-code" viewBox="0 0 24 24"><path d="m9 18-6-6 6-6"/><path d="m15 6 6 6-6 6"/><path d="m13 4-2 16"/></symbol>
+        <symbol id="icon-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+        <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20 13 13 20 4 11V4h7l9 9Z"/><circle cx="8.5" cy="8.5" r="1.5"/></symbol>
+        <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+        <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+        <symbol id="icon-sprout" viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 12C6.5 12 4 8.5 4 4c5.5 0 8 3.5 8 8Z"/><path d="M12 14c5.5 0 8-3.5 8-8-5.5 0-8 3.5-8 8Z"/></symbol>
+        <symbol id="icon-sample" viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M8 9h8M8 13h4"/><circle cx="16" cy="15" r="1.5"/></symbol>
+        <symbol id="icon-school" viewBox="0 0 24 24"><path d="m12 4 10 5-10 5L2 9l10-5Z"/><path d="M6 11v5c2.8 2 9.2 2 12 0v-5"/></symbol>
+    </svg>
+
+    <main class="about-page about-stable-page">
+        <div class="about-shell">
+            <section class="about-hero" id="project-intro" aria-labelledby="aboutTitle">
+                <div class="about-hero-main">
+                    <div class="about-hero-copy">
+                        <p class="about-kicker">项目介绍</p>
+                        <p class="about-brand-title">
+                            <span class="brand-wordmark about-brand-wordmark" aria-label="Tomato Insight">
+                                <span class="brand-word brand-word-tomato" aria-hidden="true"><span>Tom</span><span class="brand-tomato-a">a</span><span>to</span></span>
+                                <span class="brand-word brand-word-insight" aria-hidden="true"><span>Ins</span><span class="brand-insight-i">i</span><span>ght</span></span>
+                            </span>
+                        </p>
+                        <h1 id="aboutTitle">番茄果叶病害智能检测与分析系统</h1>
+                        <p class="about-summary">面向番茄叶片与果实识别场景，提供图片上传、智能检测、结果标注、辅助分析与结果查看能力，帮助用户更直观地理解病害类别、异常区域和处理建议。</p>
+                        <div class="about-tag-list" aria-label="项目标签">
+                            <span>图像识别</span>
+                            <span>农业AI</span>
+                            <span>智能检测</span>
+                            <span>结果标注</span>
+                            <span>辅助建议</span>
+                        </div>
+                    </div>
+
+                    <div class="about-hero-media" aria-hidden="true">
+                    <img src="/static/images/about/tomato-ai-hero-bg.webp" alt="" decoding="async">
+                    </div>
+                </div>
+            </section>
+
+            <div class="about-transition" aria-hidden="true"></div>
+
+            <div class="about-detail-zone">
+                <section class="about-section about-highlights-section" id="core-highlights">
+                    <div class="about-section-head">
+                        <p>CORE CAPABILITIES</p>
+                        <h2>核心能力</h2>
+                    </div>
+                    <div class="about-hero-highlights" aria-label="项目概览">
+                        <article class="about-card about-highlight-card about-highlight-dual">
+                            <svg><use href="#icon-target"></use></svg>
+                            <div>
+                                <h2>果叶双场景识别</h2>
+                                <p>支持番茄叶片与果实两类图片检测，覆盖常见病害观察场景。</p>
+                            </div>
+                        </article>
+                        <article class="about-card about-highlight-card about-highlight-annotation">
+                            <svg><use href="#icon-chart"></use></svg>
+                            <div>
+                                <h2>病害区域标注</h2>
+                                <p>在结果图中呈现疑似病害区域，帮助用户快速定位异常位置。</p>
+                            </div>
+                        </article>
+                        <article class="about-card about-highlight-card about-highlight-advice">
+                            <svg><use href="#icon-link"></use></svg>
+                            <div>
+                                <h2>分析建议输出</h2>
+                                <p>结合识别结果给出可读的结论说明与处理参考，便于查看和复盘。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="about-section about-flow-section" id="technical-process">
+                    <div class="about-section-head">
+                        <p>USER WORKFLOW</p>
+                        <h2>从上传到结果的使用流程</h2>
+                    </div>
+                    <ol class="about-flow-grid">
+                        <li class="about-card about-flow-card">
+                            <span class="about-flow-index">01</span>
+                            <svg><use href="#icon-upload"></use></svg>
+                            <h3>上传图片</h3>
+                            <p>选择番茄叶片或果实图片，进入对应检测页面。</p>
+                        </li>
+                        <li class="about-card about-flow-card">
+                            <span class="about-flow-index">02</span>
+                            <svg><use href="#icon-code"></use></svg>
+                            <h3>选择检测场景</h3>
+                            <p>根据图片类型进入叶片检测或果实检测，减少场景混淆。</p>
+                        </li>
+                        <li class="about-card about-flow-card">
+                            <span class="about-flow-index">03</span>
+                            <svg><use href="#icon-cpu"></use></svg>
+                            <h3>智能识别</h3>
+                            <p>系统对图片中的疑似病害区域进行识别与定位。</p>
+                        </li>
+                        <li class="about-card about-flow-card">
+                            <span class="about-flow-index">04</span>
+                            <svg><use href="#icon-tag"></use></svg>
+                            <h3>结果标注</h3>
+                            <p>页面展示病害类别、置信度和识别框，便于直观看图。</p>
+                        </li>
+                        <li class="about-card about-flow-card">
+                            <span class="about-flow-index">05</span>
+                            <svg><use href="#icon-grid"></use></svg>
+                            <h3>分析建议</h3>
+                            <p>根据识别结果生成简要说明与处理参考。</p>
+                        </li>
+                        <li class="about-card about-flow-card">
+                            <span class="about-flow-index">06</span>
+                            <svg><use href="#icon-camera"></use></svg>
+                            <h3>记录留存</h3>
+                            <p>最近检测结果可在页面中回看，适合样本对比和结果复查。</p>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="about-section about-training-section" id="training-route">
+                    <div class="about-section-head">
+                        <p>RECOGNITION BASIS</p>
+                        <h2>数据基础与模型表现</h2>
+                    </div>
+                    <p class="about-data-lead about-data-lead-desktop">系统围绕叶片与果实两类识别场景建立数据基础，将样本覆盖、目标定位与结果可视化连接成完整展示链路。</p>
+                    <p class="about-data-lead about-data-lead-mobile">叶片与果实双场景数据支撑，连接样本覆盖、目标定位与结果展示。</p>
+                    <div class="about-data-grid recognition-card-columns" aria-label="数据基础与模型表现概览">
+                        <div class="recognition-card-column">
+                            <article class="about-data-card about-data-card-leaf recognition-card--leaf" role="button" tabindex="0" data-about-detail="leaf" aria-pressed="false" aria-expanded="false" aria-controls="aboutDataDetailLeaf">
+                                <span class="about-data-eyebrow">
+                                    <svg class="about-data-eyebrow-icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>
+                                    叶片样本规模
+                                </span>
+                                <strong class="about-data-count-lockup">
+                                    <span class="about-data-count-label">叶片数据约</span>
+                                    <span class="about-data-count-line">
+                                        <em class="about-data-count" data-target="12800">0</em>
+                                        <span class="about-data-count-unit">张</span>
+                                    </span>
+                                </strong>
+                                <p>覆盖叶片纹理、病斑与颜色变化，为复杂叶面识别提供训练基础。</p>
+                                <i class="about-data-open-cue" aria-hidden="true">→</i>
+                            </article>
+                            <div class="about-data-detail about-data-inline-detail detail-leaf" id="aboutDataDetailLeaf" data-about-detail-panel data-detail-for="leaf" aria-hidden="true"></div>
+
+                            <article class="about-data-card about-data-card-scene recognition-card--dual" role="button" tabindex="0" data-about-detail="dual" aria-pressed="false" aria-expanded="false" aria-controls="aboutDataDetailDual">
+                                <span class="about-data-eyebrow">
+                                    <svg class="about-data-eyebrow-icon" aria-hidden="true"><use href="#icon-school"></use></svg>
+                                    双模型识别
+                                </span>
+                                <strong>叶片 + 果实双模型</strong>
+                                <p>分别面向叶片病害与果实状态检测，减少不同场景混合干扰。</p>
+                                <i class="about-data-open-cue" aria-hidden="true">→</i>
+                            </article>
+                            <div class="about-data-detail about-data-inline-detail detail-dual" id="aboutDataDetailDual" data-about-detail-panel data-detail-for="dual" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="recognition-card-column">
+                            <article class="about-data-card about-data-card-fruit recognition-card--fruit" role="button" tabindex="0" data-about-detail="fruit" aria-pressed="false" aria-expanded="false" aria-controls="aboutDataDetailFruit">
+                                <span class="about-data-eyebrow">
+                                    <svg class="about-data-eyebrow-icon" aria-hidden="true"><use href="#icon-target"></use></svg>
+                                    果实样本规模
+                                </span>
+                                <strong class="about-data-count-lockup">
+                                    <span class="about-data-count-label">果实数据约</span>
+                                    <span class="about-data-count-line">
+                                        <em class="about-data-count" data-target="1981">0</em>
+                                        <span class="about-data-count-unit">张</span>
+                                    </span>
+                                </strong>
+                                <p>聚焦果实目标定位、成熟状态与异常区域识别，支撑果实检测场景。</p>
+                                <i class="about-data-open-cue" aria-hidden="true">→</i>
+                            </article>
+                            <div class="about-data-detail about-data-inline-detail detail-fruit" id="aboutDataDetailFruit" data-about-detail-panel data-detail-for="fruit" aria-hidden="true"></div>
+
+                            <article class="about-data-card about-data-card-result recognition-card--explain" role="button" tabindex="0" data-about-detail="result" aria-pressed="false" aria-expanded="false" aria-controls="aboutDataDetailResult">
+                                <span class="about-data-eyebrow">
+                                    <svg class="about-data-eyebrow-icon" aria-hidden="true"><use href="#icon-chart"></use></svg>
+                                    结果可解释
+                                </span>
+                                <strong>类别 / 置信度 / 标注框</strong>
+                                <div class="about-card-visual about-card-visual-result" aria-hidden="true">
+                                    <span class="detect-frame"></span>
+                                    <span class="detect-info">
+                                        <i>类别</i>
+                                        <b>叶斑病</b>
+                                        <i>置信度</i>
+                                        <em></em>
+                                    </span>
+                                </div>
+                                <p>输出识别类别、可信度和目标区域，便于展示、复查和辅助说明。</p>
+                                <i class="about-data-open-cue" aria-hidden="true">→</i>
+                            </article>
+                            <div class="about-data-detail about-data-inline-detail detail-result" id="aboutDataDetailResult" data-about-detail-panel data-detail-for="result" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about-section about-capabilities-section" id="system-capabilities">
+                    <div class="about-section-head">
+                        <p>SYSTEM CAPABILITIES</p>
+                        <h2>系统能力</h2>
+                    </div>
+                    <div class="about-card-grid about-capability-grid">
+                        <article class="about-card about-feature-card">
+                            <svg><use href="#icon-leaf"></use></svg>
+                            <h3>多病害识别</h3>
+                            <p>叶片与果实分别建模，识别多种番茄病害目标。</p>
+                        </article>
+                        <article class="about-card about-feature-card">
+                            <svg><use href="#icon-target"></use></svg>
+                            <h3>区域定位</h3>
+                            <p>输出类别、置信度与病害区域检测框位置。</p>
+                        </article>
+                        <article class="about-card about-feature-card">
+                            <svg><use href="#icon-code"></use></svg>
+                            <h3>快速响应</h3>
+                            <p>前后端协同完成上传与返回。</p>
+                        </article>
+                        <article class="about-card about-feature-card">
+                            <svg><use href="#icon-link"></use></svg>
+                            <h3>稳定可靠</h3>
+                            <p>检测流程清晰，结果输出稳定。</p>
+                        </article>
+                        <article class="about-card about-feature-card">
+                            <svg><use href="#icon-chart"></use></svg>
+                            <h3>数据可视化</h3>
+                            <p>直观展示分析结果与分布趋势。</p>
+                        </article>
+                        <article class="about-card about-feature-card">
+                            <svg><use href="#icon-sprout"></use></svg>
+                            <h3>知识辅助</h3>
+                            <p>提供病害防治建议与处理参考。</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="about-section about-scenes-section" id="application-scenes">
+                    <div class="about-section-head">
+                        <p>应用场景</p>
+                        <h2>场景化应用与落地展示</h2>
+                    </div>
+                    <div class="about-card-grid about-scene-grid">
+                        <article class="about-card about-scene-card about-scene-agri">
+                            <span>01</span>
+                            <h3>农业病害观测</h3>
+                            <p>辅助识别番茄叶片病害，提升田间巡检效率与判断速度。</p>
+                        </article>
+                        <article class="about-card about-scene-card about-scene-sample">
+                            <span>02</span>
+                            <h3>样本分析展示</h3>
+                            <p>集中展示检测过程与标注结果，适合样本分析、结果复查与流程讲解。</p>
+                        </article>
+                        <article class="about-card about-scene-card about-scene-teach">
+                            <span>03</span>
+                            <h3>教学与说明</h3>
+                            <p>用完整识别链路说明智能农业图像识别系统的使用方式。</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/device-detect.js?v={{ device_detect_js_version }}"></script>
+    <script src="/static/js/nav.js?v={{ nav_js_version }}"></script>
+    <script src="/static/js/about.js?v={{ about_js_version }}"></script>
+</body>
+</html>

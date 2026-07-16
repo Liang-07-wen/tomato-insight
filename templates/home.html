@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Insight</title>
+    <link rel="icon" type="image/png" href="/static/assets/logo/logo-icon.png">
+    <link rel="stylesheet" href="/static/css/global.css?v={{ global_css_version }}">
+    <link rel="stylesheet" href="/static/css/home.css?v={{ home_css_version }}">
+    <link rel="stylesheet" href="/static/css/responsive.css?v={{ responsive_css_version }}">
+</head>
+<body class="home-body home-page" data-nav-animation="enabled" data-nav-shift-delay="1280" data-nav-bright-delay="1280" data-nav-settled-delay="3040">
+    <nav class="site-nav home-nav">
+        <a class="brand" href="/">
+            <img class="brand-logo" src="/static/assets/logo/logo-icon.webp" alt="" width="42" height="42" decoding="async">
+            <span class="brand-wordmark" aria-label="Tomato Insight">
+                <span class="brand-word brand-word-tomato" aria-hidden="true"><span>Tom</span><span class="brand-tomato-a">a</span><span>to</span></span>
+                <span class="brand-word brand-word-insight" aria-hidden="true"><span>Ins</span><span class="brand-insight-i">i</span><span>ght</span></span>
+            </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primaryNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="primaryNav">
+            <a class="active" href="/" data-home-reset>首页</a>
+            <a href="/leaf">叶片检测</a>
+            <a href="/fruit">果实检测</a>
+            <a href="/about">项目介绍</a>
+            <a href="/developer">关于我们</a>
+        </div>
+    </nav>
+    <button class="nav-overlay" type="button" aria-label="关闭导航菜单" hidden></button>
+
+    <main class="home-shell">
+        <section class="home-hero" aria-labelledby="homeTitle">
+            <div class="hero-scene" aria-hidden="true">
+                <div class="scene-overlay"></div>
+                <div class="scene-glow"></div>
+            </div>
+
+            <div class="home-copy">
+                <div class="hero-brand-row">
+                    <img class="hero-brand-logo" src="/static/assets/logo/logo-main.webp" alt="" width="60" height="60" decoding="async">
+                    <span class="hero-brand-badge brand-wordmark" aria-label="Tomato Insight">
+                        <span class="brand-word brand-word-tomato" aria-hidden="true"><span>Tom</span><span class="brand-tomato-a">a</span><span>to</span></span>
+                        <span class="brand-word brand-word-insight" aria-hidden="true"><span>Ins</span><span class="brand-insight-i">i</span><span>ght</span></span>
+                    </span>
+                </div>
+                <h1 class="hero-title" id="homeTitle">番茄果叶病害智能检测与分析系统</h1>
+            </div>
+
+            <div class="home-support">
+                <p class="home-subtitle">面向番茄叶片与果实场景，提供病害识别、标注分析与防治建议输出。</p>
+                <div class="hero-actions">
+                    <button class="hero-button primary" id="startFlowBtn" type="button">开始检测</button>
+                    <a class="hero-button secondary" href="/about">项目介绍</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="selection-stage" aria-label="功能层模式">
+            <nav class="entry-grid" aria-label="功能入口卡片">
+                <a class="entry-card function-card leaf-card-bg" href="/leaf" style="--entry-delay: 0ms;">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="laser-frame" aria-hidden="true"></span>
+                    <span class="hud-scan" aria-hidden="true"></span>
+                    <span class="entry-badge">功能入口</span>
+                    <span class="entry-icon leaf-icon" aria-hidden="true"></span>
+                    <span class="entry-index">01</span>
+                    <span class="entry-title">叶片病害检测</span>
+                    <span class="entry-desc">上传叶片图像，定位叶部异常与病斑区域，进入叶片病害检测工作流。</span>
+                    <span class="entry-action">进入识别</span>
+                </a>
+
+                <a class="entry-card function-card fruit-card-bg" href="/fruit" style="--entry-delay: 120ms;">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="laser-frame" aria-hidden="true"></span>
+                    <span class="hud-scan" aria-hidden="true"></span>
+                    <span class="entry-badge">功能入口</span>
+                    <span class="entry-icon fruit-icon" aria-hidden="true"></span>
+                    <span class="entry-index">02</span>
+                    <span class="entry-title">果实病害检测</span>
+                    <span class="entry-desc">分析果面状态与检测结果，保留原有果实检测页面与接口链路。</span>
+                    <span class="entry-action">进入识别</span>
+                </a>
+
+                <a class="entry-card info-card developer-card-bg" href="/developer" style="--entry-delay: 240ms;">
+                    <span class="card-spotlight" aria-hidden="true"></span>
+                    <span class="laser-frame" aria-hidden="true"></span>
+                    <span class="hud-scan" aria-hidden="true"></span>
+                    <span class="entry-badge info-badge">关于我们</span>
+                    <span class="entry-icon developer-icon" aria-hidden="true"></span>
+                    <span class="entry-index">03</span>
+                    <span class="entry-title">关于我们</span>
+                    <span class="entry-desc">查看团队成员、职责分工、开发栈与系统构建说明，独立于项目介绍页。</span>
+                    <span class="entry-action">查看关于我们</span>
+                </a>
+            </nav>
+
+            <div class="selection-stage-head">
+                <div class="selection-copy">
+                    <p class="selection-eyebrow">Select Module</p>
+                    <p>请选择功能入口，进入对应模块</p>
+                </div>
+                <button class="selection-back" id="resetFlowBtn" type="button">返回首页</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/device-detect.js?v={{ device_detect_js_version }}"></script>
+    <script src="/static/js/nav.js?v={{ nav_js_version }}"></script>
+    <script src="/static/js/home.js?v={{ home_js_version }}"></script>
+</body>
+</html>

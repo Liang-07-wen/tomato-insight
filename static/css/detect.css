@@ -1,0 +1,3892 @@
+﻿.detect-page {
+    width: min(1240px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 122px 0 70px;
+    position: relative;
+    isolation: isolate;
+    --accent: var(--leaf);
+    --accent-2: var(--cyan);
+    --accent-rgb: 100, 210, 138;
+}
+
+.detect-page-fruit {
+    --accent: var(--tomato);
+    --accent-2: var(--amber);
+    --accent-rgb: 232, 93, 74;
+}
+
+body.leaf-detect-body {
+    background-color: #02090b;
+    background-image:
+        radial-gradient(ellipse at 18% 58%, rgba(0, 5, 6, 0.42), transparent 44%),
+        radial-gradient(ellipse at 42% 86%, rgba(0, 5, 6, 0.36), transparent 46%),
+        linear-gradient(90deg, rgba(0, 5, 6, 0.38), rgba(0, 5, 6, 0.24) 42%, rgba(0, 5, 6, 0.08) 72%, rgba(0, 5, 6, 0.02)),
+        linear-gradient(180deg, rgba(0, 5, 6, 0.1), transparent 28%, rgba(0, 5, 6, 0.3)),
+        radial-gradient(circle at 18% 38%, rgba(20, 58, 45, 0.1), transparent 28%),
+        url("/static/images/detect/leaf/scene-forest-glow-bg.webp");
+    background-size: cover;
+    background-position: center 34%;
+    background-repeat: no-repeat;
+}
+
+body.fruit-detect-body {
+    min-height: 100%;
+    background-color: #0d0503;
+    background-image:
+        linear-gradient(to bottom, rgba(43, 15, 8, 0.18) 0%, rgba(26, 10, 5, 0.44) 42%, rgba(13, 5, 3, 0.9) 100%),
+        url("/static/images/detect/fruit/scene-tomato-bg.webp"),
+        linear-gradient(to bottom, #2b0f08 0%, #1a0a05 40%, #0d0503 100%);
+    background-size:
+        cover,
+        cover,
+        cover;
+    background-position:
+        center top,
+        center top,
+        center top;
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-attachment:
+        scroll,
+        scroll,
+        scroll;
+}
+
+body.leaf-detect-body::before,
+body.leaf-detect-body::after,
+body.fruit-detect-body::before,
+body.fruit-detect-body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.leaf-detect-body .detect-page,
+body.fruit-detect-body .detect-page {
+    position: relative;
+    z-index: 1;
+}
+
+body.leaf-detect-body .site-nav,
+body.fruit-detect-body .site-nav {
+    z-index: 80;
+}
+
+body.leaf-detect-body .toast,
+body.fruit-detect-body .toast {
+    z-index: 20;
+}
+
+body.leaf-detect-body::before {
+    opacity: 0.42;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(191, 255, 206, 0.44) 0 1px, rgba(126, 242, 165, 0.18) 2px, transparent 6px),
+        radial-gradient(circle at 18% 24%, rgba(126, 242, 165, 0.34) 0 2px, transparent 6px),
+        radial-gradient(circle at 22% 64%, rgba(204, 255, 194, 0.26) 0 1px, rgba(126, 226, 184, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 28% 78%, rgba(126, 226, 184, 0.24) 0 1px, transparent 5px),
+        radial-gradient(circle at 36% 34%, rgba(234, 255, 202, 0.22) 0 1px, rgba(126, 242, 165, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 48% 44%, rgba(189, 255, 214, 0.22) 0 1px, transparent 5px),
+        radial-gradient(circle at 56% 18%, rgba(218, 255, 198, 0.2) 0 1px, rgba(100, 210, 138, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 64% 72%, rgba(100, 210, 138, 0.3) 0 2px, transparent 6px),
+        radial-gradient(circle at 72% 48%, rgba(191, 255, 206, 0.2) 0 1px, rgba(126, 242, 165, 0.11) 2px, transparent 6px),
+        radial-gradient(circle at 76% 18%, rgba(170, 255, 204, 0.28) 0 2px, transparent 7px),
+        radial-gradient(circle at 86% 70%, rgba(126, 226, 184, 0.18) 0 1px, rgba(100, 210, 138, 0.1) 2px, transparent 6px),
+        radial-gradient(circle at 92% 36%, rgba(228, 255, 204, 0.28) 0 1px, rgba(126, 242, 165, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 6% 70%, rgba(126, 226, 184, 0.24) 0 1px, rgba(100, 210, 138, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 44% 12%, rgba(236, 255, 204, 0.26) 0 1px, rgba(126, 242, 165, 0.12) 2px, transparent 6px);
+    animation: leafLightParticles 5.2s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+body.leaf-detect-body::after {
+    opacity: 0.46;
+    background:
+        radial-gradient(circle at 8% 42%, rgba(222, 255, 200, 0.5) 0 1px, rgba(126, 242, 165, 0.18) 2px, transparent 6px),
+        radial-gradient(circle at 14% 86%, rgba(126, 226, 184, 0.34) 0 1px, rgba(100, 210, 138, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 24% 14%, rgba(230, 255, 204, 0.44) 0 1px, rgba(126, 242, 165, 0.16) 2px, transparent 6px),
+        radial-gradient(circle at 32% 52%, rgba(162, 255, 198, 0.34) 0 1px, rgba(100, 210, 138, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 42% 88%, rgba(191, 255, 206, 0.36) 0 1px, rgba(126, 226, 184, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 52% 22%, rgba(225, 255, 205, 0.4) 0 1px, rgba(126, 242, 165, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 60% 62%, rgba(126, 226, 184, 0.32) 0 1px, rgba(100, 210, 138, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 70% 34%, rgba(230, 255, 204, 0.38) 0 1px, rgba(126, 242, 165, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 82% 82%, rgba(162, 255, 198, 0.3) 0 1px, rgba(100, 210, 138, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 92% 28%, rgba(222, 255, 200, 0.36) 0 1px, rgba(126, 242, 165, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 16% 36%, rgba(212, 255, 198, 0.38) 0 1px, rgba(126, 226, 184, 0.14) 2px, transparent 6px),
+        radial-gradient(circle at 38% 18%, rgba(238, 255, 206, 0.34) 0 1px, rgba(126, 242, 165, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 74% 60%, rgba(174, 255, 202, 0.34) 0 1px, rgba(100, 210, 138, 0.12) 2px, transparent 6px),
+        radial-gradient(circle at 88% 48%, rgba(226, 255, 202, 0.32) 0 1px, rgba(126, 242, 165, 0.12) 2px, transparent 6px);
+    transform: translate3d(0, 0, 0);
+    animation: leafExtraLightParticles 6.8s ease-in-out infinite 0.6s;
+    will-change: transform, opacity;
+}
+
+body.fruit-detect-body::before {
+    opacity: 0.26;
+    background:
+        radial-gradient(circle at 78% 16%, rgba(255, 132, 72, 0.34), transparent 34%),
+        radial-gradient(circle at 62% 42%, rgba(255, 84, 48, 0.16), transparent 38%),
+        radial-gradient(circle at 22% 78%, rgba(255, 172, 92, 0.14), transparent 42%);
+    transform: translate3d(0, 0, 0);
+    animation: fruitWarmAuraDrift 7.2s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+body.fruit-detect-body::after {
+    opacity: 0.62;
+    background:
+        radial-gradient(circle at 12% 24%, rgba(255, 230, 170, 0.86) 0 1px, rgba(255, 158, 92, 0.28) 2px, transparent 5px),
+        radial-gradient(circle at 15% 48%, rgba(255, 186, 108, 0.66) 0 1px, rgba(255, 116, 70, 0.2) 2px, transparent 5px),
+        radial-gradient(circle at 20% 62%, rgba(255, 205, 138, 0.76) 0 1px, rgba(255, 118, 72, 0.24) 2px, transparent 5px),
+        radial-gradient(circle at 24% 18%, rgba(255, 242, 198, 0.7) 0 1px, rgba(255, 168, 96, 0.22) 2px, transparent 5px),
+        radial-gradient(circle at 28% 40%, rgba(255, 236, 188, 0.72) 0 1px, rgba(255, 154, 82, 0.2) 2px, transparent 5px),
+        radial-gradient(circle at 32% 70%, rgba(255, 178, 104, 0.58) 0 1px, rgba(255, 92, 58, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 38% 82%, rgba(255, 202, 120, 0.66) 0 1px, rgba(255, 96, 58, 0.2) 2px, transparent 5px),
+        radial-gradient(circle at 42% 12%, rgba(255, 220, 150, 0.6) 0 1px, rgba(255, 124, 76, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 46% 28%, rgba(255, 218, 156, 0.7) 0 1px, rgba(255, 130, 72, 0.22) 2px, transparent 5px),
+        radial-gradient(circle at 49% 74%, rgba(255, 188, 112, 0.62) 0 1px, rgba(255, 112, 66, 0.2) 2px, transparent 5px),
+        radial-gradient(circle at 54% 54%, rgba(255, 228, 180, 0.76) 0 1px, rgba(255, 154, 82, 0.22) 2px, transparent 5px),
+        radial-gradient(circle at 58% 34%, rgba(255, 190, 116, 0.6) 0 1px, rgba(255, 92, 58, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 63% 20%, rgba(255, 212, 140, 0.68) 0 1px, rgba(255, 118, 72, 0.22) 2px, transparent 5px),
+        radial-gradient(circle at 66% 88%, rgba(255, 176, 104, 0.58) 0 1px, rgba(255, 96, 58, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 72% 76%, rgba(255, 198, 118, 0.62) 0 1px, rgba(255, 96, 58, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 74% 44%, rgba(255, 234, 180, 0.7) 0 1px, rgba(255, 154, 82, 0.22) 2px, transparent 5px),
+        radial-gradient(circle at 78% 12%, rgba(255, 214, 136, 0.64) 0 1px, rgba(255, 116, 68, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 82% 36%, rgba(255, 234, 184, 0.78) 0 1px, rgba(255, 154, 82, 0.26) 2px, transparent 6px),
+        radial-gradient(circle at 84% 68%, rgba(255, 186, 112, 0.58) 0 1px, rgba(255, 94, 58, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 88% 22%, rgba(255, 242, 196, 0.72) 0 1px, rgba(255, 174, 94, 0.24) 2px, transparent 6px),
+        radial-gradient(circle at 90% 58%, rgba(255, 204, 132, 0.62) 0 1px, rgba(255, 112, 68, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 92% 84%, rgba(255, 170, 96, 0.52) 0 1px, rgba(255, 92, 58, 0.16) 2px, transparent 5px),
+        radial-gradient(circle at 8% 78%, rgba(255, 220, 156, 0.56) 0 1px, rgba(255, 132, 72, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 6% 42%, rgba(255, 184, 112, 0.52) 0 1px, rgba(255, 96, 58, 0.16) 2px, transparent 5px),
+        radial-gradient(circle at 96% 40%, rgba(255, 222, 158, 0.58) 0 1px, rgba(255, 132, 72, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 11% 88%, rgba(255, 198, 126, 0.5) 0 1px, rgba(255, 92, 58, 0.14) 2px, transparent 5px),
+        radial-gradient(circle at 18% 12%, rgba(255, 238, 190, 0.58) 0 1px, rgba(255, 150, 82, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 26% 88%, rgba(255, 174, 102, 0.48) 0 1px, rgba(255, 92, 58, 0.14) 2px, transparent 5px),
+        radial-gradient(circle at 35% 22%, rgba(255, 226, 164, 0.58) 0 1px, rgba(255, 132, 72, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 41% 56%, rgba(255, 196, 118, 0.48) 0 1px, rgba(255, 104, 62, 0.14) 2px, transparent 5px),
+        radial-gradient(circle at 57% 14%, rgba(255, 236, 188, 0.58) 0 1px, rgba(255, 150, 82, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 61% 66%, rgba(255, 180, 104, 0.48) 0 1px, rgba(255, 92, 58, 0.14) 2px, transparent 5px),
+        radial-gradient(circle at 70% 30%, rgba(255, 224, 160, 0.56) 0 1px, rgba(255, 132, 72, 0.18) 2px, transparent 5px),
+        radial-gradient(circle at 76% 90%, rgba(255, 176, 104, 0.44) 0 1px, rgba(255, 92, 58, 0.13) 2px, transparent 5px),
+        radial-gradient(circle at 86% 10%, rgba(255, 244, 204, 0.6) 0 1px, rgba(255, 174, 94, 0.2) 2px, transparent 6px),
+        radial-gradient(circle at 94% 72%, rgba(255, 186, 112, 0.46) 0 1px, rgba(255, 92, 58, 0.14) 2px, transparent 5px);
+    transform: translate3d(0, 0, 0);
+    animation: fruitParticleLift 5.8s ease-in-out infinite 0.35s;
+    will-change: transform, opacity;
+}
+
+@keyframes leafLightParticles {
+    0%,
+    100% {
+        opacity: 0.28;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate3d(34px, -30px, 0);
+    }
+}
+
+@keyframes leafExtraLightParticles {
+    0%,
+    100% {
+        opacity: 0.28;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 0.62;
+        transform: translate3d(-30px, -34px, 0);
+    }
+}
+
+@keyframes fruitWarmAuraDrift {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 0.34;
+        transform: translate3d(-12px, 10px, 0);
+    }
+}
+
+@keyframes fruitParticleLift {
+    0%,
+    100% {
+        opacity: 0.46;
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 0.88;
+        transform: translate3d(16px, -30px, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.leaf-detect-body::before,
+    body.leaf-detect-body::after,
+    body.fruit-detect-body::before,
+    body.fruit-detect-body::after {
+        animation: none;
+    }
+}
+
+.detect-page-fruit::before {
+    content: "";
+    position: absolute;
+    inset: -90px -80px auto auto;
+    width: min(56vw, 660px);
+    height: 360px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.46;
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 73% 46%, rgba(232, 93, 74, 0.34), transparent 30%),
+        radial-gradient(circle at 82% 24%, rgba(240, 168, 79, 0.16), transparent 24%),
+        linear-gradient(90deg, rgba(3, 11, 16, 0.88), rgba(3, 11, 16, 0.22) 42%, rgba(3, 11, 16, 0.72)),
+        url("/static/images/brand/tomato-cutout.webp");
+    background-size: cover, cover, cover, 470px auto;
+    background-position: center, center, center, right 36px top -96px;
+    background-repeat: no-repeat;
+    filter: saturate(1.08) brightness(0.82);
+}
+
+.detect-hero {
+    position: relative;
+    padding: 42px 0 28px;
+}
+
+.detect-page .eyebrow {
+    color: var(--accent);
+}
+
+.detect-hero h1 {
+    max-width: 760px;
+    margin: 0;
+    font-size: clamp(2.1rem, 5vw, 4.6rem);
+    line-height: 1.08;
+}
+
+.detect-hero p:not(.eyebrow) {
+    max-width: 680px;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.detect-workspace {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.86fr) minmax(300px, 1fr) minmax(340px, 1.08fr);
+    gap: 18px;
+    align-items: stretch;
+    position: relative;
+}
+
+.upload-zone,
+.result-panel,
+.history-panel {
+    background:
+        linear-gradient(180deg, rgba(11, 27, 34, 0.86), rgba(6, 16, 22, 0.84)),
+        linear-gradient(120deg, rgba(var(--accent-rgb), 0.06), transparent 42%);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border-radius: 18px;
+    box-shadow: 0 24px 78px rgba(0, 0, 0, 0.36);
+    backdrop-filter: blur(18px);
+}
+
+.upload-zone {
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+    padding: 26px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.upload-zone .toast {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    z-index: 12;
+    width: max-content;
+    max-width: min(420px, calc(100% - 48px));
+    padding: 13px 18px;
+    color: rgba(245, 255, 248, 0.96);
+    text-align: center;
+    line-height: 1.55;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.2), transparent 52%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(var(--accent-rgb), 0.09)),
+        rgba(5, 17, 21, 0.82);
+    border: 1px solid rgba(var(--accent-rgb), 0.34);
+    border-radius: 16px;
+    box-shadow:
+        0 26px 62px rgba(0, 0, 0, 0.42),
+        0 12px 28px rgba(var(--accent-rgb), 0.16),
+        0 0 42px rgba(var(--accent-rgb), 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    opacity: 0;
+    transform: translate(-50%, -34%) scale(0.9);
+    filter: blur(2px);
+    backdrop-filter: blur(16px) saturate(1.22);
+    pointer-events: none;
+    transition:
+        opacity 0.18s ease,
+        filter 0.18s ease,
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.upload-zone .toast.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(-50%, -50%) scale(1);
+    animation: uploadToastFloatIn 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes uploadToastFloatIn {
+    0% {
+        opacity: 0;
+        filter: blur(3px);
+        transform: translate(-50%, -28%) scale(0.88);
+    }
+
+    62% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(-50%, -53%) scale(1.035);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.upload-zone::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.34;
+    background:
+        linear-gradient(105deg, transparent 49%, rgba(var(--accent-rgb), 0.32) 50%, transparent 52%),
+        linear-gradient(78deg, transparent 51%, rgba(126, 211, 255, 0.1) 52%, transparent 54%),
+        radial-gradient(circle at 18% 86%, rgba(var(--accent-rgb), 0.18), transparent 28%);
+    mask-image: linear-gradient(140deg, transparent 8%, #000 58%, transparent 100%);
+}
+
+.upload-zone:hover,
+.upload-zone.dragover {
+    border-color: rgba(var(--accent-rgb), 0.5);
+    transform: translateY(-2px);
+    background:
+        linear-gradient(180deg, rgba(17, 40, 48, 0.9), rgba(10, 24, 30, 0.86)),
+        linear-gradient(120deg, rgba(var(--accent-rgb), 0.1), transparent 42%);
+}
+
+.upload-zone input {
+    display: none;
+}
+
+.upload-zone h2,
+.panel-heading span,
+.result-panel h2 {
+    margin: 0;
+}
+
+.upload-zone p {
+    margin: 0;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+    line-height: 1.7;
+}
+
+.panel-kicker {
+    display: inline-flex;
+    margin-bottom: 4px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+}
+
+.primary-action,
+.detect-button,
+.panel-heading button,
+.clear-inline {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    color: #061018;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border-radius: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.primary-action,
+.detect-button {
+    box-shadow:
+        0 16px 34px rgba(var(--accent-rgb), 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.clear-inline {
+    width: 100%;
+    color: var(--text);
+    background: rgba(var(--accent-rgb), 0.07);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+}
+
+.detect-mode-switch {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid rgba(var(--accent-rgb), 0.18);
+    border-radius: 10px;
+    background:
+        linear-gradient(135deg, rgba(var(--accent-rgb), 0.08), rgba(126, 211, 255, 0.035)),
+        rgba(255, 255, 255, 0.028);
+}
+
+.detect-mode-switch legend {
+    grid-column: 1 / -1;
+    padding: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.detect-mode-switch label {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 10px;
+    color: var(--muted);
+    border: 1px solid rgba(var(--accent-rgb), 0.14);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detect-mode-switch input {
+    accent-color: var(--accent);
+}
+
+.detect-mode-switch label:has(input:checked) {
+    color: var(--text);
+    border-color: rgba(var(--accent-rgb), 0.42);
+    background: rgba(var(--accent-rgb), 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 18px rgba(var(--accent-rgb), 0.08);
+}
+
+.panel-heading button {
+    color: var(--text);
+    background: rgba(var(--accent-rgb), 0.08);
+    border: 1px solid rgba(var(--accent-rgb), 0.22);
+}
+
+.result-panel,
+.history-panel {
+    padding: 20px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: var(--text);
+    font-weight: 900;
+}
+
+.panel-heading small {
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.preview-frame {
+    min-height: 318px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: var(--muted);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(var(--accent-rgb), 0.035)),
+        linear-gradient(90deg, transparent 49%, rgba(var(--accent-rgb), 0.06) 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, rgba(var(--accent-rgb), 0.035) 50%, transparent 51%);
+    background-size: auto, 52px 52px, 52px 52px;
+    border: 1px dashed rgba(var(--accent-rgb), 0.24);
+    border-radius: 14px;
+}
+
+.preview-frame img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    max-height: 340px;
+    object-fit: contain;
+}
+
+.preview-frame.has-image span {
+    display: none;
+}
+
+.preview-frame.has-image img {
+    display: block;
+}
+
+
+.detect-button {
+    width: 100%;
+    min-height: 58px;
+    margin-top: 18px;
+    font-size: 1.02rem;
+    border-radius: 14px;
+}
+
+.detect-button:disabled {
+    color: #788997;
+    background: rgba(126, 211, 255, 0.08);
+    cursor: not-allowed;
+}
+
+.result-count {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.result-model-meta {
+    margin-top: 12px;
+    padding: 11px 14px;
+    color: rgba(180, 255, 205, 0.9);
+    background:
+        linear-gradient(135deg, rgba(var(--accent-rgb), 0.08), rgba(126, 211, 255, 0.028)),
+        rgba(255, 255, 255, 0.028);
+    border: 1px solid rgba(var(--accent-rgb), 0.14);
+    border-radius: 12px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(12px);
+}
+
+.model-meta-item + .model-meta-item {
+    margin-top: 10px;
+}
+
+.model-meta-label {
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(201, 221, 214, 0.72);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.model-meta-value {
+    display: block;
+    color: rgba(236, 255, 245, 0.96);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.model-meta-note {
+    margin: 12px 0 0;
+    padding-top: 12px;
+    color: rgba(214, 232, 224, 0.82);
+    font-size: 0.84rem;
+    font-weight: 500;
+    line-height: 1.65;
+    border-top: 1px solid rgba(var(--accent-rgb), 0.12);
+}
+
+.result-card {
+    margin-top: 14px;
+    padding: 14px;
+    color: var(--muted);
+    background: rgba(var(--accent-rgb), 0.045);
+    border: 1px solid rgba(var(--accent-rgb), 0.14);
+    border-radius: 14px;
+}
+
+.result-summary,
+.advice-box {
+    margin-top: 4px;
+}
+
+.detection-list {
+    display: grid;
+    gap: 10px;
+}
+
+.detection-item {
+    padding: 12px;
+    color: var(--text);
+    background: rgba(var(--accent-rgb), 0.07);
+    border: 1px solid rgba(var(--accent-rgb), 0.15);
+    border-radius: 8px;
+}
+
+.detection-meta {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.detection-confidence {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 6px 10px;
+    color: rgba(190, 255, 214, 0.94);
+    background: rgba(var(--accent-rgb), 0.08);
+    border: 1px solid rgba(var(--accent-rgb), 0.18);
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.history-panel {
+    margin-top: 18px;
+}
+
+.history-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.history-item {
+    min-height: 178px;
+    display: grid;
+    align-content: start;
+    gap: 7px;
+    padding: 12px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(var(--accent-rgb), 0.18);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.history-item:hover {
+    border-color: rgba(var(--accent-rgb), 0.45);
+    transform: translateY(-2px);
+}
+
+.history-item img {
+    width: 100%;
+    height: 104px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.history-item strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-item div {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.history-brief {
+    overflow: hidden;
+    color: rgba(232, 244, 251, 0.76);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-image-fallback {
+    height: 104px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 8px;
+    color: var(--muted);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(var(--accent-rgb), 0.04)),
+        linear-gradient(90deg, transparent 49%, rgba(var(--accent-rgb), 0.05) 50%, transparent 51%);
+    background-size: auto, 42px 42px;
+    border: 1px dashed rgba(var(--accent-rgb), 0.2);
+    border-radius: 10px;
+    font-size: 0.86rem;
+}
+
+.history-empty {
+    color: var(--muted);
+}
+
+@media (max-width: 1060px) {
+    .detect-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .upload-zone {
+        min-height: 300px;
+    }
+
+    .history-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .detect-page {
+        width: min(100% - 24px, 1180px);
+        padding-top: 156px;
+    }
+
+    .upload-zone .toast {
+        max-width: calc(100% - 28px);
+        padding: 11px 14px;
+        font-size: 0.92rem;
+    }
+
+    .history-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.detect-page-leaf {
+    --leaf-glow: rgba(92, 255, 157, 0.18);
+    --leaf-glow-strong: rgba(103, 255, 173, 0.32);
+    width: min(1460px, calc(100% - 64px));
+    padding-inline: 8px;
+}
+
+.detect-page-leaf .detect-hero {
+    padding-bottom: 52px;
+}
+
+.detect-page-leaf .primary-action {
+    width: 100%;
+    min-height: 66px;
+    border-radius: 20px;
+    font-size: 1.08rem;
+    letter-spacing: 0.03em;
+    box-shadow:
+        0 18px 42px rgba(100, 210, 138, 0.22),
+        0 0 32px rgba(100, 210, 138, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transition: transform 0.22s ease, opacity 0.22s ease, box-shadow 0.22s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .primary-action:hover,
+.detect-page-leaf .primary-action:focus-visible {
+    transform: translate3d(0, -2px, 0) scale(1.015);
+    box-shadow:
+        0 24px 52px rgba(100, 210, 138, 0.28),
+        0 0 42px rgba(100, 210, 138, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.detect-page-leaf .detect-mode-switch {
+    display: flex;
+    gap: 6px;
+    padding: 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(125, 255, 171, 0.1);
+}
+
+.detect-page-leaf .detect-mode-switch legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.detect-page-leaf .detect-mode-switch label {
+    flex: 1;
+    min-height: 42px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .detect-mode-switch input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.detect-page-leaf .detect-mode-switch label:has(input:checked) {
+    color: #061018;
+    background: linear-gradient(135deg, rgba(144, 255, 180, 0.96), rgba(99, 230, 152, 0.88));
+    box-shadow: 0 10px 28px rgba(100, 210, 138, 0.18);
+}
+
+.detect-page-leaf .detect-mode-switch label:hover {
+    transform: translate3d(0, -1px, 0);
+}
+
+.detect-page-leaf .clear-inline {
+    min-height: 46px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(125, 255, 171, 0.1);
+    transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .clear-inline:hover {
+    transform: translate3d(0, -1px, 0);
+    background: rgba(100, 210, 138, 0.08);
+}
+
+.detect-page-leaf .preview-frame {
+    min-height: 476px;
+    position: relative;
+    border: 0;
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 50% 52%, rgba(100, 210, 138, 0.12), transparent 38%),
+        linear-gradient(90deg, transparent 49%, rgba(100, 210, 138, 0.045) 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, rgba(100, 210, 138, 0.035) 50%, transparent 51%),
+        rgba(255, 255, 255, 0.035);
+    background-size: auto, 46px 46px, 46px 46px, auto;
+    box-shadow:
+        inset 0 0 0 1px rgba(125, 255, 171, 0.09),
+        inset 0 -42px 80px rgba(100, 210, 138, 0.045);
+    transition: transform 0.22s ease, opacity 0.22s ease, box-shadow 0.22s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .preview-frame.dragover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow:
+        inset 0 0 0 1px rgba(125, 255, 171, 0.28),
+        inset 0 -42px 80px rgba(100, 210, 138, 0.08),
+        0 0 34px rgba(100, 210, 138, 0.14);
+}
+
+.detect-page-leaf .preview-frame > span {
+    max-width: 26ch;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.leaf-studio-page .preview-frame img {
+    max-height: 100%;
+    transition: transform 0.26s ease, opacity 0.26s ease, filter 0.26s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf.is-detecting .preview-frame img {
+    filter: blur(1px) brightness(0.88);
+}
+
+.detect-page-leaf .preview-frame::after {
+    content: "";
+    position: absolute;
+    inset: -20% auto -20% -36%;
+    width: 32%;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, rgba(145, 255, 184, 0.24), transparent);
+    transform: translate3d(-120%, 0, 0) skewX(-16deg);
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf.is-detecting .preview-frame::after {
+    opacity: 0.55;
+    animation: leafScan 2.2s ease-in-out infinite;
+}
+
+@keyframes leafScan {
+    0% {
+        transform: translate3d(-120%, 0, 0) skewX(-16deg);
+    }
+    100% {
+        transform: translate3d(520%, 0, 0) skewX(-16deg);
+    }
+}
+
+.detect-page-leaf .detect-button {
+    min-height: 76px;
+    border-radius: 24px;
+    font-size: 1.12rem;
+    letter-spacing: 0.06em;
+    box-shadow:
+        0 20px 48px rgba(100, 210, 138, 0.24),
+        0 0 42px rgba(100, 210, 138, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transition: transform 0.22s ease, opacity 0.22s ease, box-shadow 0.22s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .detect-button:not(:disabled):hover,
+.detect-page-leaf .detect-button:not(:disabled):focus-visible {
+    transform: translate3d(0, -2px, 0) scale(1.025);
+    box-shadow:
+        0 28px 62px rgba(100, 210, 138, 0.3),
+        0 0 54px rgba(100, 210, 138, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.detect-page-leaf .detect-button:disabled {
+    box-shadow: none;
+}
+
+.detect-page-leaf .result-panel {
+    min-height: 612px;
+    padding: 24px;
+}
+
+.detect-page-leaf .result-card {
+    border: 0;
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(100, 210, 138, 0.085), rgba(126, 211, 255, 0.035)),
+        rgba(255, 255, 255, 0.035);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: transform 0.28s ease, opacity 0.28s ease, box-shadow 0.28s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .result-model-meta {
+    margin-top: 14px;
+    padding: 12px 15px;
+    border: 0;
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg, rgba(100, 210, 138, 0.1), rgba(126, 211, 255, 0.032)),
+        rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+.detect-page-leaf.has-result .result-card {
+    animation: leafResultIn 0.36s ease both;
+}
+
+.detect-page-leaf.has-result .advice-card {
+    animation-delay: 80ms;
+}
+
+@keyframes leafResultIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 10px, 0) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+.detect-page-leaf .detection-item {
+    border: 0;
+    border-radius: 14px;
+    background: rgba(100, 210, 138, 0.07);
+}
+
+.detect-page-leaf .detection-item strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #effff4;
+    font-size: 1.22rem;
+}
+
+.detect-page-leaf .history-panel {
+    margin-top: 34px;
+}
+
+.detect-page-leaf .history-list,
+.detect-page-fruit .history-list {
+    display: flex;
+    grid-template-columns: none;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 2px 10px;
+    scroll-snap-type: x proximity;
+}
+
+.detect-page-leaf .history-list::-webkit-scrollbar,
+.detect-page-fruit .history-list::-webkit-scrollbar {
+    height: 7px;
+}
+
+.detect-page-leaf .history-list::-webkit-scrollbar-thumb,
+.detect-page-fruit .history-list::-webkit-scrollbar-thumb {
+    background: rgba(100, 210, 138, 0.22);
+    border-radius: 999px;
+}
+
+.detect-page-leaf .history-item,
+.detect-page-fruit .history-item {
+    flex: 0 0 226px;
+    min-height: 188px;
+    border: 0;
+    border-radius: 18px;
+    scroll-snap-align: start;
+    background:
+        linear-gradient(135deg, rgba(100, 210, 138, 0.08), rgba(126, 211, 255, 0.035)),
+        rgba(255, 255, 255, 0.04);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 12px 26px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, opacity;
+}
+
+.detect-page-leaf .history-item:hover,
+.detect-page-leaf .history-item:focus-visible,
+.detect-page-fruit .history-item:hover,
+.detect-page-fruit .history-item:focus-visible {
+    transform: translate3d(0, -4px, 0) scale(1.025);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 20px 38px rgba(0, 0, 0, 0.26),
+        0 0 28px rgba(100, 210, 138, 0.16);
+}
+
+.detect-page-leaf .history-item img,
+.detect-page-leaf .history-image-fallback,
+.detect-page-fruit .history-item img,
+.detect-page-fruit .history-image-fallback {
+    height: 112px;
+    border-radius: 14px;
+}
+
+.detect-page-leaf .detect-workspace {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 28px;
+    align-items: stretch;
+}
+
+body.detect-page-entering .detect-page {
+    animation: detectPageFadeIn 0.42s ease both;
+}
+
+body.leaf-detect-body.detect-page-entering .detect-page,
+body.fruit-detect-body.detect-page-entering .detect-page {
+    animation: none;
+    opacity: 1;
+    filter: none;
+}
+
+body.detect-page-entering .detect-hero > *,
+body.detect-page-entering .result-panel,
+body.detect-page-entering .history-panel {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0) scale(0.985);
+    transition:
+        opacity 0.42s ease,
+        transform 0.52s cubic-bezier(0.2, 0.9, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+body.detect-page-entering .upload-zone {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.97);
+    transition:
+        opacity 0.4s ease,
+        transform 0.48s cubic-bezier(0.2, 0.9, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+body.detect-intro-card .upload-zone,
+body.detect-intro-copy .detect-hero > *,
+body.detect-intro-result .result-panel,
+body.detect-intro-history .history-panel {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+body.detect-page-entering .upload-zone .primary-action,
+body.detect-page-entering .upload-zone .detect-mode-switch,
+body.detect-page-entering .upload-zone .clear-inline {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition:
+        opacity 0.34s ease,
+        transform 0.42s cubic-bezier(0.2, 0.9, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+body.detect-intro-card .upload-zone .primary-action {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 120ms;
+}
+
+body.detect-intro-card .upload-zone .detect-mode-switch {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 220ms;
+}
+
+body.detect-intro-card .upload-zone .clear-inline {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 320ms;
+}
+
+body.detect-intro-card .leaf-studio-board.upload-zone .primary-action,
+body.detect-intro-card .leaf-studio-board.upload-zone .detect-mode-switch,
+body.detect-intro-card .leaf-studio-board.upload-zone .clear-inline {
+    transition-delay: 0ms;
+}
+
+@keyframes detectPageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Leaf recognition studio v2: unified upload + preview workbench. */
+.leaf-studio-page {
+    width: min(1510px, calc(100% - 48px));
+    padding-top: 122px;
+    --leaf-studio-line: rgba(149, 255, 191, 0.16);
+    --leaf-studio-line-strong: rgba(149, 255, 191, 0.28);
+    --leaf-studio-panel: rgba(5, 18, 17, 0.68);
+    --leaf-studio-panel-soft: rgba(11, 35, 29, 0.46);
+    --leaf-studio-text: rgba(241, 255, 247, 0.94);
+    --leaf-studio-muted: rgba(199, 218, 207, 0.72);
+}
+
+.leaf-studio-page::before {
+    content: none;
+}
+
+.leaf-studio-page::after {
+    content: none;
+}
+
+.leaf-studio-hero {
+    padding: 36px 4px 22px;
+}
+
+.leaf-studio-hero h1 {
+    font-size: clamp(2.2rem, 4.4vw, 4.25rem);
+    letter-spacing: -0.04em;
+}
+
+.leaf-studio-hero p:not(.eyebrow) {
+    margin-top: 12px;
+}
+
+.leaf-studio-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 2.75fr) minmax(300px, 0.95fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.leaf-studio-board.upload-zone,
+.leaf-result-panel.result-panel,
+.leaf-history-panel.history-panel {
+    border: 1px solid var(--leaf-studio-line);
+    border-radius: 30px;
+    background:
+        linear-gradient(180deg, rgba(7, 25, 22, 0.28), rgba(2, 10, 12, 0.36)),
+        rgba(4, 15, 16, 0.12);
+    box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.085),
+        inset 0 -18px 40px rgba(42, 178, 104, 0.014);
+    backdrop-filter: blur(3px) saturate(1.02);
+    contain: layout paint style;
+}
+
+.leaf-studio-board.upload-zone {
+    min-height: 740px;
+    padding: 34px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(560px, 1fr);
+    align-items: stretch;
+    justify-items: stretch;
+    gap: 22px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    cursor: default;
+}
+
+.detect-page-leaf .leaf-studio-board.upload-zone,
+.detect-page-leaf .leaf-studio-board.upload-zone:hover,
+.detect-page-leaf .leaf-studio-board.upload-zone.dragover {
+    background:
+        linear-gradient(180deg, rgba(7, 25, 22, 0.28), rgba(2, 10, 12, 0.34)),
+        rgba(4, 15, 16, 0.12);
+    background-image:
+        linear-gradient(180deg, rgba(7, 25, 22, 0.28), rgba(2, 10, 12, 0.34)),
+        linear-gradient(120deg, rgba(149, 255, 191, 0.026), transparent 48%);
+    background-size: auto;
+    background-position: center;
+    transform: none;
+}
+
+.leaf-studio-board.upload-zone::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 16% 14%, rgba(140, 255, 184, 0.055), transparent 26%),
+        linear-gradient(180deg, rgba(2, 11, 11, 0.04), rgba(2, 10, 12, 0.16));
+}
+
+.leaf-studio-board.upload-zone::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 23% 17%, rgba(144, 255, 185, 0.045), transparent 24%),
+        radial-gradient(circle at 76% 72%, rgba(50, 210, 172, 0.04), transparent 28%),
+        linear-gradient(180deg, rgba(2, 9, 11, 0.02), rgba(2, 9, 11, 0.1));
+}
+
+.leaf-board-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+
+.leaf-title-lockup {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 22px;
+    align-items: center;
+}
+
+.leaf-title-icon {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(139, 255, 183, 0.26);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(4, 19, 18, 0.08), rgba(4, 19, 18, 0.28)),
+        url("/static/images/cards/leaf-card.webp");
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 0 28px rgba(99, 230, 153, 0.08);
+}
+
+.leaf-title-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 36%),
+        radial-gradient(circle at 50% 50%, transparent 42%, rgba(2, 9, 10, 0.18) 100%);
+}
+
+.leaf-title-lockup h2 {
+    margin: 0;
+    color: var(--leaf-studio-text);
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+}
+
+.leaf-title-lockup p {
+    margin: 10px 0 0;
+    color: var(--leaf-studio-muted);
+    font-size: 1.08rem;
+}
+
+.leaf-upload-status {
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    color: #a8ffc7;
+    border: 1px solid rgba(139, 255, 183, 0.14);
+    border-radius: 999px;
+    background: rgba(4, 18, 17, 0.34);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.leaf-upload-status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7cf2a5;
+    box-shadow: 0 0 12px rgba(124, 242, 165, 0.46);
+}
+
+.leaf-control-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) auto;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.leaf-mode-switch.detect-mode-switch {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    border-color: rgba(139, 255, 183, 0.13);
+    background: rgba(2, 12, 13, 0.34);
+}
+
+.leaf-mode-switch legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.leaf-mode-switch label {
+    min-height: 58px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(218, 235, 224, 0.76);
+    font-size: 1rem;
+}
+
+.leaf-mode-switch label:has(input:checked) {
+    color: #f4fff7;
+    background:
+        linear-gradient(180deg, rgba(139, 255, 183, 0.14), rgba(139, 255, 183, 0.04)),
+        rgba(139, 255, 183, 0.05);
+    box-shadow: inset 0 -3px 0 rgba(124, 242, 165, 0.82);
+}
+
+.leaf-mode-switch input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.leaf-mode-actions {
+    display: grid;
+    grid-template-columns: minmax(148px, auto) minmax(92px, auto);
+    gap: 12px;
+    align-items: stretch;
+}
+
+.leaf-upload-canvas.preview-frame {
+    width: 100%;
+    min-height: 600px;
+    padding: clamp(36px, 5vw, 68px);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(139, 255, 183, 0.08);
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 50% 40%, rgba(139, 255, 183, 0.035), transparent 34%),
+        linear-gradient(180deg, rgba(4, 18, 18, 0.08), rgba(2, 10, 12, 0.14));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035),
+        inset 0 0 54px rgba(2, 8, 10, 0.34);
+    cursor: pointer;
+}
+
+.leaf-upload-canvas.preview-frame.has-image {
+    cursor: default;
+}
+
+.leaf-upload-canvas.preview-frame::before {
+    content: none;
+}
+
+.leaf-upload-canvas.preview-frame.dragover {
+    border-color: rgba(139, 255, 183, 0.36);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 0 90px rgba(124, 242, 165, 0.08),
+        0 0 32px rgba(124, 242, 165, 0.12);
+}
+
+.leaf-upload-empty {
+    width: min(760px, 100%);
+    min-height: min(420px, 100%);
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--leaf-studio-text);
+}
+
+.leaf-upload-cloud {
+    width: 150px;
+    height: 116px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    margin: 4px 0 24px;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(151, 238, 190, 0.09), transparent 58%);
+    filter:
+        drop-shadow(0 0 10px rgba(151, 238, 190, 0.18))
+        drop-shadow(0 0 26px rgba(126, 226, 184, 0.1));
+}
+
+.leaf-upload-cloud::before {
+    content: "";
+    position: absolute;
+    inset: -8px -4px -12px;
+    border: 1px solid rgba(151, 238, 190, 0.06);
+    border-radius: 50%;
+    transform: scaleX(0.92);
+    box-shadow: 0 0 40px rgba(151, 238, 190, 0.075);
+}
+
+.leaf-upload-cloud::after {
+    content: none;
+}
+
+.leaf-upload-cloud svg {
+    width: 112px;
+    height: 88px;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+.leaf-upload-cloud path {
+    fill: none;
+    stroke: rgba(151, 238, 190, 0.9);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.leaf-upload-empty strong {
+    color: #edf8f0;
+    font-size: clamp(1.82rem, 3vw, 2.72rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: 0;
+    text-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.26),
+        0 0 18px rgba(151, 238, 190, 0.14);
+}
+
+.leaf-upload-empty p {
+    margin: 15px 0 0;
+    color: rgba(239, 250, 243, 0.66);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: none;
+}
+
+.leaf-select-action.primary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    width: auto;
+    min-width: 230px;
+    max-width: min(280px, 100%);
+    min-height: 64px;
+    margin-top: 38px;
+    padding: 0 34px;
+    border: 0;
+    border-radius: 20px;
+    color: #062316;
+    font-size: 1.08rem;
+    font-weight: 800;
+    background:
+        linear-gradient(135deg, #81e3b1 0%, #a7edc2 100%);
+    box-shadow:
+        0 18px 38px rgba(8, 35, 24, 0.26),
+        0 8px 24px rgba(126, 226, 184, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.leaf-select-action.primary-action svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.78;
+}
+
+.leaf-select-action.primary-action:hover {
+    background:
+        linear-gradient(135deg, #8eeabb 0%, #b4f5cf 100%);
+    box-shadow:
+        0 20px 42px rgba(8, 35, 24, 0.28),
+        0 10px 28px rgba(126, 226, 184, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.38);
+    transform: translateY(-1px);
+}
+
+.leaf-demo-link {
+    appearance: none;
+    order: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin: 18px 0 0;
+    padding: 0;
+    color: rgba(158, 240, 197, 0.68);
+    background: transparent;
+    border: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.leaf-demo-link:hover,
+.leaf-demo-link:focus-visible {
+    color: rgba(158, 240, 197, 0.92);
+    text-shadow: 0 0 14px rgba(158, 240, 197, 0.18);
+    outline: none;
+}
+
+.demo-visual {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 auto;
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 10px;
+    transition: transform 0.22s ease, filter 0.22s ease, box-shadow 0.22s ease;
+    will-change: transform;
+}
+
+.demo-leaf-visual {
+    background:
+        radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.16), transparent 26%),
+        rgba(111, 222, 145, 0.12);
+    box-shadow:
+        inset 0 0 0 1px rgba(158, 240, 197, 0.18),
+        0 0 12px rgba(111, 222, 145, 0.08);
+}
+
+.demo-leaf-visual::before {
+    content: "";
+    width: 18px;
+    height: 22px;
+    background:
+        linear-gradient(90deg, transparent 47%, rgba(238, 255, 240, 0.62) 48%, transparent 51%),
+        linear-gradient(135deg, #9bedaf, #3daa6e);
+    border-radius: 80% 8% 80% 18%;
+    transform: rotate(38deg);
+}
+
+.demo-tomato-visual {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 31% 26%, rgba(255, 226, 169, 0.82), transparent 13%),
+        radial-gradient(circle at 62% 70%, rgba(158, 26, 28, 0.35), transparent 38%),
+        linear-gradient(145deg, #ff9b64 0%, #ef4f38 64%, #a9252b 100%);
+    box-shadow:
+        inset -4px -6px 10px rgba(80, 12, 13, 0.28),
+        inset 3px 4px 8px rgba(255, 215, 154, 0.18),
+        0 0 16px rgba(255, 105, 67, 0.18);
+}
+
+.demo-tomato-visual::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 10px;
+    top: -3px;
+    left: 6px;
+    background: #70d782;
+    border-radius: 14px 3px 14px 3px;
+    transform: rotate(-12deg);
+    box-shadow: 0 0 10px rgba(112, 215, 130, 0.16);
+}
+
+.demo-visual:hover,
+.leaf-demo-link:focus-visible .demo-visual,
+.detect-page.is-mode-enhanced .demo-visual:hover,
+.detect-page.is-mode-enhanced .leaf-demo-link:focus-visible .demo-visual {
+    animation: none;
+    transform: translate3d(0, -2px, 0) scale(1.08);
+    filter: saturate(1.08) brightness(1.06);
+}
+
+.demo-leaf-visual:hover,
+.leaf-demo-link:focus-visible .demo-leaf-visual,
+.detect-page.is-mode-enhanced .demo-leaf-visual:hover,
+.detect-page.is-mode-enhanced .leaf-demo-link:focus-visible .demo-leaf-visual {
+    box-shadow:
+        inset 0 0 0 1px rgba(158, 240, 197, 0.28),
+        0 0 18px rgba(111, 222, 145, 0.18);
+}
+
+.demo-tomato-visual:hover,
+.leaf-demo-link:focus-visible .demo-tomato-visual,
+.detect-page.is-mode-enhanced .demo-tomato-visual:hover,
+.detect-page.is-mode-enhanced .leaf-demo-link:focus-visible .demo-tomato-visual {
+    box-shadow:
+        inset -4px -6px 10px rgba(80, 12, 13, 0.22),
+        inset 3px 4px 8px rgba(255, 215, 154, 0.22),
+        0 0 22px rgba(255, 105, 67, 0.28);
+}
+
+.leaf-demo-link:disabled {
+    cursor: wait;
+    opacity: 0.58;
+    transform: none;
+}
+
+.leaf-demo-link:disabled .demo-visual {
+    transform: none;
+    filter: grayscale(0.15);
+}
+
+.detect-page.is-mode-enhanced .demo-visual {
+    animation: demoEnhancedFloat 2.6s ease-in-out infinite;
+}
+
+@keyframes demoEnhancedFloat {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+        filter: saturate(1) brightness(1);
+    }
+    50% {
+        transform: translate3d(0, -2px, 0);
+        filter: saturate(1.04) brightness(1.035);
+    }
+}
+
+.leaf-upload-empty small {
+    order: 1;
+    margin-top: 38px;
+    color: rgba(207, 224, 214, 0.52);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    white-space: nowrap;
+}
+
+.leaf-upload-canvas.has-image .leaf-upload-empty {
+    opacity: 0;
+    transform: scale(0.98);
+    pointer-events: none;
+}
+
+.leaf-upload-canvas.has-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    padding: 16px;
+    z-index: 1;
+}
+
+
+.annotation-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.annotation-layer.is-visible {
+    opacity: 1;
+}
+
+.leaf-upload-canvas.has-image .annotation-layer,
+.leaf-upload-canvas.has-image .annotation-box,
+.leaf-upload-canvas.has-image .annotation-box > span {
+    display: block;
+}
+
+.annotation-box {
+    position: absolute;
+    z-index: 1;
+    border: 2px solid rgba(126, 242, 165, 0.95);
+    border-radius: 10px;
+    box-shadow:
+        0 0 0 1px rgba(6, 32, 20, 0.5),
+        0 0 18px rgba(126, 242, 165, 0.28),
+        inset 0 0 18px rgba(126, 242, 165, 0.08);
+}
+
+.annotation-box > span {
+    position: absolute;
+    left: var(--annotation-label-left, -2px);
+    top: var(--annotation-label-top, -34px);
+    z-index: 2;
+    box-sizing: border-box;
+    max-width: var(--annotation-label-max-width, min(260px, calc(100vw - 48px)));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 6px 10px;
+    color: #052015;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: 900;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(158, 240, 197, 0.96), rgba(126, 226, 184, 0.92));
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24), 0 0 16px rgba(126, 242, 165, 0.18);
+}
+
+.annotation-box[data-label-placement="inside"] > span {
+    border-radius: 10px;
+}
+
+.annotation-toggle {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    z-index: 5;
+    min-height: 34px;
+    padding: 0 14px;
+    color: rgba(232, 245, 239, 0.82);
+    border: 1px solid rgba(158, 240, 197, 0.16);
+    border-radius: 999px;
+    background: rgba(4, 15, 16, 0.34);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.annotation-toggle:hover,
+.annotation-toggle:focus-visible {
+    color: #e8f5ef;
+    border-color: rgba(158, 240, 197, 0.34);
+    background: rgba(8, 28, 24, 0.48);
+    outline: none;
+}
+
+.canvas-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    gap: 12px;
+    color: rgba(232, 245, 239, 0.9);
+    background:
+        linear-gradient(90deg, transparent, rgba(158, 240, 197, 0.08), transparent),
+        rgba(2, 9, 10, 0.28);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+}
+
+.canvas-loading span {
+    width: 52px;
+    height: 52px;
+    border: 2px solid rgba(158, 240, 197, 0.18);
+    border-top-color: rgba(158, 240, 197, 0.88);
+    border-radius: 50%;
+    animation: leafSpin 0.9s linear infinite;
+}
+
+.detect-page-leaf.is-detecting .canvas-loading {
+    opacity: 1;
+}
+
+@keyframes leafSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.leaf-detect-action.detect-button {
+    width: auto;
+    min-width: 148px;
+    min-height: 58px;
+    margin: 0;
+    border-radius: 18px;
+    color: rgba(234, 255, 240, 0.88);
+    background:
+        linear-gradient(135deg, rgba(124, 242, 165, 0.22), rgba(82, 218, 190, 0.1)),
+        rgba(4, 18, 19, 0.34);
+    border: 1px solid rgba(139, 255, 183, 0.18);
+}
+
+.leaf-detect-action.detect-button:not(:disabled) {
+    color: #062015;
+    background: linear-gradient(135deg, #9af0ad, #61d895);
+}
+
+.leaf-reset-action.clear-inline {
+    width: auto;
+    min-width: 92px;
+    min-height: 58px;
+    margin: 0;
+    color: rgba(232, 245, 239, 0.74);
+    border: 1px solid rgba(158, 240, 197, 0.15);
+    border-radius: 18px;
+    background: rgba(5, 20, 18, 0.18);
+}
+
+.leaf-reset-action.clear-inline:hover,
+.leaf-reset-action.clear-inline:focus-visible {
+    color: rgba(232, 245, 239, 0.94);
+    background: rgba(158, 240, 197, 0.08);
+    border-color: rgba(158, 240, 197, 0.26);
+}
+
+.leaf-result-panel.result-panel {
+    min-height: 740px;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+}
+
+.leaf-result-panel .panel-heading {
+    align-items: center;
+}
+
+.leaf-result-panel .panel-heading span:first-child {
+    color: var(--leaf-studio-text);
+    font-size: 1.46rem;
+}
+
+.leaf-result-panel .result-count {
+    color: #a8ffc7;
+}
+
+.leaf-result-panel .result-card {
+    min-height: 108px;
+    border: 1px solid rgba(139, 255, 183, 0.1);
+    border-radius: 20px;
+    background:
+        linear-gradient(135deg, rgba(139, 255, 183, 0.028), rgba(92, 216, 190, 0.012)),
+        rgba(4, 17, 18, 0.18);
+}
+
+.leaf-result-panel .model-card {
+    min-height: 184px;
+}
+
+.leaf-history-panel.history-panel {
+    margin-top: 28px;
+    content-visibility: auto;
+    contain-intrinsic-size: 176px;
+}
+
+/* Fruit page reuses the leaf studio workbench and only swaps theme tokens/icons. */
+.detect-page-fruit.leaf-studio-page {
+    --leaf-studio-line: rgba(255, 126, 84, 0.18);
+    --leaf-studio-line-strong: rgba(255, 126, 84, 0.32);
+    --leaf-studio-panel: rgba(28, 10, 8, 0.68);
+    --leaf-studio-panel-soft: rgba(52, 18, 12, 0.48);
+    --leaf-studio-text: rgba(255, 246, 241, 0.95);
+    --leaf-studio-muted: rgba(235, 204, 191, 0.74);
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.detect-page-fruit.leaf-studio-page::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 240px;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, #0d0503);
+}
+
+.detect-page-fruit .leaf-studio-board.upload-zone,
+.detect-page-fruit .leaf-studio-board.upload-zone:hover,
+.detect-page-fruit .leaf-studio-board.upload-zone.dragover {
+    background-image:
+        linear-gradient(180deg, rgba(32, 10, 7, 0.3), rgba(12, 6, 6, 0.36)),
+        linear-gradient(120deg, rgba(255, 126, 84, 0.034), transparent 48%);
+}
+
+.detect-page-fruit .leaf-title-icon {
+    border-color: rgba(255, 126, 84, 0.28);
+    background:
+        linear-gradient(180deg, rgba(32, 10, 8, 0.06), rgba(32, 10, 8, 0.26)),
+        url("/static/images/cards/fruit-card.webp");
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 0 28px rgba(255, 90, 58, 0.1);
+}
+
+.detect-page-fruit .leaf-title-icon::before {
+    background:
+        linear-gradient(180deg, rgba(255, 235, 218, 0.1), transparent 36%),
+        radial-gradient(circle at 50% 50%, transparent 42%, rgba(24, 7, 4, 0.2) 100%);
+}
+
+.detect-page-fruit .leaf-title-icon::after {
+    content: none;
+}
+
+.detect-page-fruit .leaf-upload-status {
+    color: #ffd3bc;
+    border-color: rgba(255, 126, 84, 0.16);
+    background: rgba(30, 10, 7, 0.34);
+}
+
+.detect-page-fruit .leaf-upload-status::before {
+    background: #ff8a5f;
+    box-shadow: 0 0 12px rgba(255, 138, 95, 0.48);
+}
+
+.detect-page-fruit .leaf-mode-switch.detect-mode-switch {
+    border-color: rgba(255, 126, 84, 0.15);
+    background: rgba(20, 7, 6, 0.36);
+}
+
+.detect-page-fruit .leaf-mode-switch label {
+    color: rgba(239, 217, 207, 0.76);
+}
+
+.detect-page-fruit .leaf-mode-switch label:has(input:checked) {
+    color: #fff6f0;
+    background:
+        linear-gradient(180deg, rgba(255, 126, 84, 0.17), rgba(255, 126, 84, 0.05)),
+        rgba(255, 126, 84, 0.055);
+    box-shadow: inset 0 -3px 0 rgba(255, 126, 84, 0.84);
+}
+
+.detect-page-fruit .leaf-upload-canvas.preview-frame.dragover {
+    border-color: rgba(255, 126, 84, 0.38);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 0 90px rgba(255, 126, 84, 0.08),
+        0 0 32px rgba(255, 90, 58, 0.12);
+}
+
+.detect-page-fruit .leaf-upload-cloud {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 172, 130, 0.1), transparent 58%);
+    filter:
+        drop-shadow(0 0 10px rgba(255, 172, 130, 0.2))
+        drop-shadow(0 0 26px rgba(255, 126, 84, 0.1));
+}
+
+.detect-page-fruit .leaf-upload-cloud::before {
+    border-color: rgba(255, 172, 130, 0.07);
+    box-shadow: 0 0 40px rgba(255, 126, 84, 0.08);
+}
+
+.detect-page-fruit .leaf-upload-cloud path {
+    stroke: rgba(255, 180, 140, 0.92);
+}
+
+.detect-page-fruit .leaf-select-action.primary-action {
+    color: #2b0903;
+    background: linear-gradient(135deg, #ff865f 0%, #ffc06a 100%);
+    box-shadow:
+        0 18px 38px rgba(34, 10, 4, 0.28),
+        0 8px 24px rgba(255, 126, 84, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.detect-page-fruit .leaf-select-action.primary-action:hover {
+    background: linear-gradient(135deg, #ff936b 0%, #ffc978 100%);
+    box-shadow:
+        0 20px 42px rgba(34, 10, 4, 0.3),
+        0 10px 28px rgba(255, 126, 84, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.detect-page-fruit .leaf-demo-link {
+    color: rgba(255, 176, 137, 0.72);
+}
+
+.detect-page-fruit .leaf-demo-link:hover,
+.detect-page-fruit .leaf-demo-link:focus-visible {
+    color: rgba(255, 190, 152, 0.96);
+    text-shadow: 0 0 14px rgba(255, 126, 84, 0.2);
+}
+
+.detect-page-fruit .leaf-detect-action.detect-button {
+    color: rgba(255, 239, 230, 0.88);
+    background:
+        linear-gradient(135deg, rgba(255, 126, 84, 0.24), rgba(255, 172, 104, 0.1)),
+        rgba(24, 8, 7, 0.34);
+    border-color: rgba(255, 126, 84, 0.2);
+}
+
+.detect-page-fruit .leaf-detect-action.detect-button:not(:disabled) {
+    color: #2b0903;
+    background: linear-gradient(135deg, #ff865f, #ffc06a);
+}
+
+.detect-page-fruit .leaf-reset-action.clear-inline {
+    color: rgba(255, 239, 230, 0.75);
+    border-color: rgba(255, 126, 84, 0.16);
+    background: rgba(26, 8, 6, 0.2);
+}
+
+.detect-page-fruit .leaf-reset-action.clear-inline:hover,
+.detect-page-fruit .leaf-reset-action.clear-inline:focus-visible {
+    color: rgba(255, 245, 239, 0.94);
+    background: rgba(255, 126, 84, 0.09);
+    border-color: rgba(255, 126, 84, 0.28);
+}
+
+.detect-page-fruit .leaf-result-panel .panel-heading span:first-child,
+.detect-page-fruit .leaf-result-panel .result-count,
+.detect-page-fruit .panel-kicker {
+    color: #ffb08a;
+}
+
+.detect-page-fruit .result-model-meta {
+    color: rgba(255, 226, 210, 0.92);
+}
+
+.detect-page-fruit .annotation-box {
+    border-color: rgba(255, 126, 84, 0.98);
+    box-shadow:
+        0 0 0 1px rgba(40, 10, 4, 0.54),
+        0 0 18px rgba(255, 126, 84, 0.3),
+        inset 0 0 18px rgba(255, 126, 84, 0.08);
+}
+
+.detect-page-fruit .annotation-box > span {
+    color: #2b0903;
+    background: linear-gradient(135deg, rgba(255, 178, 132, 0.97), rgba(255, 132, 92, 0.94));
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24), 0 0 16px rgba(255, 126, 84, 0.2);
+}
+
+.detect-page-fruit.is-detecting .canvas-loading {
+    opacity: 1;
+}
+
+.detect-page-fruit.is-detecting .leaf-upload-canvas.has-image img {
+    filter: blur(1px) brightness(0.9);
+}
+
+@media (max-width: 1120px) {
+    .leaf-studio-page {
+        width: min(100%, calc(100% - 28px));
+    }
+
+    .leaf-studio-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .leaf-studio-board.upload-zone,
+    .leaf-result-panel.result-panel {
+        min-height: auto;
+    }
+
+    .leaf-control-row {
+        grid-template-columns: 1fr;
+    }
+
+    .leaf-mode-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .leaf-studio-board.upload-zone {
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .leaf-board-header {
+        flex-direction: column;
+    }
+
+    .leaf-title-lockup {
+        grid-template-columns: 58px 1fr;
+    }
+
+    .leaf-title-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .leaf-upload-canvas.preview-frame {
+        min-height: 340px;
+        padding: 22px;
+    }
+
+    .leaf-upload-cloud {
+        width: 136px;
+        height: 104px;
+        margin-bottom: 20px;
+    }
+
+    .leaf-upload-empty strong {
+        font-size: clamp(1.72rem, 8vw, 2.24rem);
+    }
+
+    .leaf-select-action.primary-action {
+        min-width: 206px;
+        min-height: 58px;
+        margin-top: 34px;
+        border-radius: 19px;
+    }
+
+    .leaf-upload-empty small {
+        margin-top: 34px;
+        font-size: 0.74rem;
+    }
+}
+
+/* Mode-aware visual tuning. Normal mode keeps the existing palette; enhanced mode intensifies it. */
+.detect-page {
+    transition: filter 0.24s ease;
+}
+
+.detect-page-fruit.is-mode-enhanced {
+    --accent: #ff5a3a;
+    --accent-2: #ff9a52;
+    --accent-rgb: 255, 90, 58;
+    --enhanced-breath-primary: 255, 90, 58;
+    --enhanced-breath-secondary: 255, 154, 82;
+    --enhanced-breath-tertiary: 255, 126, 84;
+}
+
+.detect-page-fruit.is-mode-enhanced .detect-mode-switch {
+    border-color: rgba(255, 90, 58, 0.25);
+    background:
+        linear-gradient(135deg, rgba(255, 90, 58, 0.09), rgba(255, 154, 82, 0.035)),
+        rgba(255, 255, 255, 0.028);
+}
+
+.detect-page-fruit.is-mode-enhanced .detect-mode-switch label:has(input[value="enhanced"]:checked) {
+    color: #fff7f0;
+    border-color: rgba(255, 112, 76, 0.68);
+    background:
+        linear-gradient(135deg, rgba(255, 90, 58, 0.3), rgba(255, 154, 82, 0.13)),
+        rgba(255, 255, 255, 0.045);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.09),
+        0 0 22px rgba(255, 90, 58, 0.2);
+}
+
+.detect-page-fruit.is-mode-enhanced .detect-button:not(:disabled) {
+    color: #240904;
+    background: linear-gradient(135deg, #ff5a3a, #ff9a52);
+    box-shadow:
+        0 18px 38px rgba(255, 90, 58, 0.22),
+        0 0 30px rgba(255, 90, 58, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.detect-page-fruit.is-mode-enhanced .result-panel .panel-heading span:first-child,
+.detect-page-fruit.is-mode-enhanced .result-count,
+.detect-page-fruit.is-mode-enhanced .panel-kicker {
+    color: #ff7a50;
+    text-shadow: 0 0 16px rgba(255, 90, 58, 0.13);
+}
+
+.detect-page-fruit.is-mode-enhanced .result-card,
+.detect-page-fruit.is-mode-enhanced .detection-item {
+    border-color: rgba(255, 90, 58, 0.2);
+    background:
+        linear-gradient(135deg, rgba(255, 90, 58, 0.075), rgba(255, 154, 82, 0.026)),
+        rgba(255, 255, 255, 0.032);
+}
+
+.detect-page-fruit.is-mode-enhanced .detection-confidence,
+.detect-page-fruit.is-mode-enhanced .result-model-meta {
+    color: rgba(255, 243, 235, 0.94);
+    border-color: rgba(255, 90, 58, 0.24);
+    background:
+        linear-gradient(135deg, rgba(255, 90, 58, 0.09), rgba(255, 154, 82, 0.03)),
+        rgba(255, 255, 255, 0.026);
+}
+
+.detect-page-fruit.is-mode-enhanced .preview-frame.has-image img {
+    filter: saturate(1.05) contrast(1.05) sepia(0.035) hue-rotate(-4deg) brightness(1.015);
+}
+
+.detect-page-leaf.is-mode-enhanced {
+    --leaf-enhanced-cyan: 64, 218, 255;
+    --leaf-enhanced-cyan-solid: #40daff;
+    --enhanced-breath-primary: var(--leaf-enhanced-cyan);
+    --enhanced-breath-secondary: 124, 242, 165;
+    --enhanced-breath-tertiary: 111, 235, 174;
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-mode-switch.detect-mode-switch {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.24);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.055),
+        0 0 24px rgba(var(--leaf-enhanced-cyan), 0.06);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-mode-switch label:has(input[value="enhanced"]:checked),
+.detect-page-leaf.is-mode-enhanced .detect-mode-switch label:has(input[value="enhanced"]:checked) {
+    color: #f2fdff;
+    background:
+        linear-gradient(180deg, rgba(var(--leaf-enhanced-cyan), 0.18), rgba(var(--leaf-enhanced-cyan), 0.052)),
+        rgba(4, 24, 30, 0.34);
+    box-shadow:
+        inset 0 -3px 0 rgba(var(--leaf-enhanced-cyan), 0.82),
+        0 0 22px rgba(var(--leaf-enhanced-cyan), 0.16);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-detect-action.detect-button:not(:disabled),
+.detect-page-leaf.is-mode-enhanced .detect-button:not(:disabled) {
+    color: #031d20;
+    background: linear-gradient(135deg, #5ce1e6, #96f8ff);
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.36);
+    box-shadow:
+        0 18px 38px rgba(var(--leaf-enhanced-cyan), 0.2),
+        0 0 28px rgba(var(--leaf-enhanced-cyan), 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-status,
+.detect-page-leaf.is-mode-enhanced .leaf-result-panel .result-count,
+.detect-page-leaf.is-mode-enhanced .panel-kicker {
+    color: #c9fbff;
+    text-shadow: 0 0 14px rgba(var(--leaf-enhanced-cyan), 0.16);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-status::before {
+    background: #5ce1e6;
+    box-shadow: 0 0 14px rgba(var(--leaf-enhanced-cyan), 0.48);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-canvas.preview-frame {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.18);
+    background:
+        radial-gradient(circle at 52% 40%, rgba(var(--leaf-enhanced-cyan), 0.045), transparent 34%),
+        linear-gradient(180deg, rgba(4, 18, 20, 0.08), rgba(2, 10, 14, 0.14));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035),
+        inset 0 0 58px rgba(2, 8, 12, 0.34),
+        0 0 30px rgba(var(--leaf-enhanced-cyan), 0.055);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-studio-board.upload-zone,
+.detect-page-leaf.is-mode-enhanced .leaf-result-panel.result-panel,
+.detect-page-leaf.is-mode-enhanced .leaf-history-panel.history-panel,
+.detect-page-leaf.is-mode-enhanced .upload-zone,
+.detect-page-leaf.is-mode-enhanced .result-panel,
+.detect-page-leaf.is-mode-enhanced .history-panel {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.42);
+    box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.24),
+        0 0 0 1px rgba(var(--leaf-enhanced-cyan), 0.1),
+        0 0 28px rgba(var(--leaf-enhanced-cyan), 0.16),
+        0 0 58px rgba(var(--leaf-enhanced-cyan), 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-result-panel .result-card,
+.detect-page-leaf.is-mode-enhanced .result-card,
+.detect-page-leaf.is-mode-enhanced .history-item {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.34);
+    background:
+        linear-gradient(135deg, rgba(var(--leaf-enhanced-cyan), 0.055), rgba(92, 225, 230, 0.018)),
+        rgba(4, 17, 18, 0.18);
+    box-shadow:
+        0 0 0 1px rgba(var(--leaf-enhanced-cyan), 0.055),
+        0 0 22px rgba(var(--leaf-enhanced-cyan), 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+.detect-page-leaf.is-mode-enhanced .history-item:hover {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.56);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        0 0 30px rgba(var(--leaf-enhanced-cyan), 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-canvas.preview-frame,
+.detect-page-leaf.is-mode-enhanced .leaf-mode-switch.detect-mode-switch,
+.detect-page-leaf.is-mode-enhanced .annotation-toggle,
+.detect-page-leaf.is-mode-enhanced .leaf-reset-action.clear-inline {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.34);
+    box-shadow:
+        0 0 0 1px rgba(var(--leaf-enhanced-cyan), 0.06),
+        0 0 24px rgba(var(--leaf-enhanced-cyan), 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-cloud,
+.detect-page-fruit.is-mode-enhanced .leaf-upload-cloud {
+    animation: enhancedCloudBreath 1.28s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 12px rgba(var(--enhanced-breath-primary), 0.38))
+        drop-shadow(0 0 32px rgba(var(--enhanced-breath-primary), 0.22));
+    will-change: transform, filter;
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-cloud::before,
+.detect-page-fruit.is-mode-enhanced .leaf-upload-cloud::before {
+    border-color: rgba(var(--enhanced-breath-primary), 0.16);
+    animation: enhancedCloudHalo 1.28s ease-in-out infinite;
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-cloud path,
+.detect-page-fruit.is-mode-enhanced .leaf-upload-cloud path {
+    animation: enhancedCloudStroke 1.8s linear infinite;
+}
+
+@keyframes enhancedCloudBreath {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        filter:
+            drop-shadow(0 0 10px rgba(var(--enhanced-breath-secondary), 0.24))
+            drop-shadow(0 0 24px rgba(var(--enhanced-breath-primary), 0.16));
+    }
+    38% {
+        transform: translate3d(0, -10px, 0) scale(1.055);
+        filter:
+            drop-shadow(0 0 16px rgba(var(--enhanced-breath-primary), 0.52))
+            drop-shadow(0 0 42px rgba(var(--enhanced-breath-primary), 0.28));
+    }
+    70% {
+        transform: translate3d(0, 7px, 0) scale(0.975);
+        filter:
+            drop-shadow(0 0 12px rgba(var(--enhanced-breath-tertiary), 0.32))
+            drop-shadow(0 0 30px rgba(var(--enhanced-breath-primary), 0.18));
+    }
+}
+
+@keyframes enhancedCloudHalo {
+    0%,
+    100% {
+        transform: scaleX(0.92) scale(1);
+        border-color: rgba(var(--enhanced-breath-secondary), 0.12);
+        box-shadow: 0 0 34px rgba(var(--enhanced-breath-secondary), 0.12);
+    }
+    50% {
+        transform: scaleX(0.96) scale(1.08);
+        border-color: rgba(var(--enhanced-breath-primary), 0.22);
+        box-shadow: 0 0 54px rgba(var(--enhanced-breath-primary), 0.24);
+    }
+}
+
+@keyframes enhancedCloudStroke {
+    0%,
+    100% {
+        stroke: rgba(var(--enhanced-breath-secondary), 0.94);
+        filter: drop-shadow(0 0 8px rgba(var(--enhanced-breath-secondary), 0.34));
+    }
+    50% {
+        stroke: rgba(var(--enhanced-breath-primary), 0.98);
+        filter: drop-shadow(0 0 12px rgba(var(--enhanced-breath-primary), 0.48));
+    }
+}
+
+.detect-page-leaf.is-mode-enhanced .leaf-upload-canvas.has-image img,
+.detect-page-leaf.is-mode-enhanced .preview-frame.has-image img,
+    filter: saturate(1.04) contrast(1.04) hue-rotate(4deg) brightness(1.01);
+}
+
+.detect-page-leaf.is-mode-enhanced .annotation-box {
+    border-color: rgba(var(--leaf-enhanced-cyan), 0.98);
+    box-shadow:
+        0 0 0 1px rgba(1, 23, 30, 0.62),
+        0 0 18px rgba(var(--leaf-enhanced-cyan), 0.34),
+        0 0 34px rgba(var(--leaf-enhanced-cyan), 0.12),
+        inset 0 0 16px rgba(var(--leaf-enhanced-cyan), 0.08);
+}
+
+.detect-page-leaf.is-mode-enhanced .annotation-box > span {
+    color: rgba(241, 253, 255, 0.96);
+    background:
+        linear-gradient(135deg, rgba(5, 28, 36, 0.82), rgba(9, 39, 48, 0.68));
+    border: 1px solid rgba(var(--leaf-enhanced-cyan), 0.36);
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.26),
+        0 0 16px rgba(var(--leaf-enhanced-cyan), 0.22);
+    backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+    html,
+    body {
+        min-height: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        background-attachment: scroll;
+    }
+
+    body.leaf-detect-body {
+        background-color: #04100d;
+        background-image:
+            linear-gradient(to bottom, #102117 0%, #0a1911 42%, #05100d 100%);
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    body.leaf-detect-body::before {
+        opacity: 1;
+        background:
+            linear-gradient(to bottom, rgba(4, 16, 13, 0.1) 0%, rgba(4, 16, 13, 0.06) 24%, rgba(4, 16, 13, 0.22) 68%, rgba(3, 10, 9, 0.48) 100%),
+            radial-gradient(circle at 50% 78%, rgba(148, 214, 132, 0.1), transparent 30%),
+            radial-gradient(circle at 84% 30%, rgba(178, 234, 166, 0.07), transparent 22%),
+            url("/static/images/detect/leaf/leaf-detect-mobile-v2.webp"),
+            linear-gradient(to bottom, #102117 0%, #0a1911 42%, #05100d 100%);
+        background-size:
+            cover,
+            cover,
+            cover,
+            auto 100%,
+            cover;
+        background-position:
+            center top,
+            center 78%,
+            86% 24%,
+            center top,
+            center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        filter: blur(0.5px);
+        animation: none;
+    }
+
+    body.leaf-detect-body::after {
+        opacity: 0.26;
+        background:
+            radial-gradient(circle at 20% 60%, rgba(198, 255, 185, 0.14), transparent 18%),
+            radial-gradient(circle at 80% 28%, rgba(210, 255, 196, 0.12), transparent 16%),
+            linear-gradient(
+                to bottom,
+                rgba(5, 14, 11, 0.18) 0%,
+                rgba(4, 12, 10, 0.2) 40%,
+                rgba(2, 8, 7, 0.62) 100%
+            );
+        animation: none;
+        will-change: auto;
+    }
+
+    body.page-fruit[data-page-type="fruit"] {
+        background-color: #0d0503;
+        background-image:
+            linear-gradient(to bottom, #2b0f08 0%, #1a0a05 40%, #0d0503 100%);
+        background-size:
+            cover;
+        background-position:
+            center top;
+        background-repeat:
+            no-repeat;
+        background-attachment:
+            scroll;
+    }
+
+    body.page-fruit[data-page-type="fruit"]::before {
+        opacity: 1;
+        background:
+            linear-gradient(to bottom, rgba(43, 15, 8, 0.1) 0%, rgba(26, 10, 5, 0.08) 24%, rgba(20, 8, 4, 0.28) 66%, rgba(13, 5, 3, 0.56) 100%),
+            radial-gradient(circle at 54% 76%, rgba(255, 160, 90, 0.1), transparent 28%),
+            radial-gradient(circle at 86% 28%, rgba(255, 128, 68, 0.07), transparent 20%),
+            url("/static/images/detect/fruit/fruit-detect-mobile-v2.webp"),
+            linear-gradient(to bottom, #2b0f08 0%, #1a0a05 40%, #0d0503 100%);
+        background-size:
+            cover,
+            cover,
+            cover,
+            auto 100%,
+            cover;
+        background-position:
+            center top,
+            center 78%,
+            86% 22%,
+            center top,
+            center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        filter: blur(0.6px);
+        transform: translate3d(0, 0, 0);
+        animation: none;
+        will-change: auto;
+    }
+
+    body.page-fruit[data-page-type="fruit"]::after {
+        opacity: 0.3;
+        background:
+            radial-gradient(circle at 82% 30%, rgba(255, 124, 48, 0.13), transparent 48%),
+            radial-gradient(ellipse at 92% 58%, rgba(255, 74, 28, 0.07), transparent 44%),
+            linear-gradient(
+                to bottom,
+                rgba(9, 5, 4, 0.18) 0%,
+                rgba(8, 4, 3, 0.2) 44%,
+                rgba(5, 2, 2, 0.62) 100%
+            ),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0%, transparent 48%, rgba(255, 108, 40, 0.035) 100%);
+        animation: none;
+        will-change: auto;
+    }
+
+    .detect-page.detect-page-leaf.leaf-studio-page,
+    .detect-page.detect-page-fruit.leaf-studio-page {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 92px 14px 34px;
+        overflow-x: hidden;
+    }
+
+    .leaf-studio-hero {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 14px 18px;
+    }
+
+    .leaf-studio-hero h1 {
+        max-width: 100%;
+        font-size: clamp(2rem, 10vw, 2.8rem);
+        line-height: 1.12;
+    }
+
+    .leaf-studio-hero p:not(.eyebrow) {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .detect-page-leaf .detect-workspace,
+    .leaf-studio-workspace {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        align-items: stretch;
+        padding-inline: 14px;
+    }
+
+    .leaf-studio-board.upload-zone,
+    .leaf-result-panel.result-panel,
+    .leaf-history-panel.history-panel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: auto;
+        position: relative;
+        inset: auto;
+        margin: 0;
+        transform: none;
+    }
+
+    .leaf-studio-board.upload-zone {
+        grid-template-rows: auto auto auto;
+        gap: 18px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .leaf-result-panel.result-panel {
+        display: grid;
+        grid-template-rows: none;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .leaf-history-panel.history-panel {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .leaf-board-header {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .leaf-title-lockup {
+        width: 100%;
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .leaf-title-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+    }
+
+    .leaf-title-icon::before {
+        width: 30px;
+        height: 36px;
+    }
+
+    .leaf-title-lockup h2 {
+        font-size: clamp(1.55rem, 7vw, 2.08rem);
+        letter-spacing: -0.02em;
+    }
+
+    .leaf-title-lockup p {
+        margin-top: 6px;
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+
+    .leaf-upload-status {
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    .leaf-control-row {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .leaf-mode-actions {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: minmax(0, 1fr) minmax(88px, 0.5fr);
+        gap: 10px;
+    }
+
+    .leaf-mode-switch.detect-mode-switch {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .leaf-mode-switch label,
+    .leaf-detect-action.detect-button,
+    .leaf-reset-action.clear-inline {
+        width: 100%;
+        min-width: 0;
+        min-height: 52px;
+    }
+
+    .leaf-upload-canvas.preview-frame {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: clamp(280px, 56vw, 420px);
+        height: auto;
+        aspect-ratio: 16 / 10;
+        padding: clamp(16px, 3.2vw, 20px);
+        border-radius: 20px;
+    }
+
+    .leaf-upload-canvas.has-image img,
+
+    .leaf-upload-empty {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .leaf-upload-cloud {
+        width: 108px;
+        height: 84px;
+        margin: 0 0 14px;
+    }
+
+    .leaf-upload-cloud svg {
+        width: 86px;
+        height: 68px;
+    }
+
+    .leaf-upload-empty strong {
+        font-size: clamp(1.55rem, 8vw, 2.08rem);
+        line-height: 1.15;
+    }
+
+    .leaf-upload-empty p {
+        margin-top: 12px;
+        font-size: 0.92rem;
+    }
+
+    .leaf-select-action.primary-action {
+        width: min(230px, 100%);
+        min-width: 0;
+        min-height: 56px;
+        margin-top: 28px;
+        padding: 0 22px;
+    }
+
+    .leaf-upload-empty small {
+        max-width: 100%;
+        margin-top: 28px;
+        white-space: normal;
+        font-size: 0.74rem;
+    }
+
+    .leaf-demo-link {
+        margin-top: 14px;
+    }
+
+    .annotation-toggle {
+        right: 12px;
+        top: 12px;
+        min-height: 32px;
+        padding: 0 10px;
+        font-size: 0.78rem;
+    }
+
+    .annotation-box > span {
+        max-width: var(--annotation-label-max-width, 72vw);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.72rem;
+    }
+
+    .leaf-result-panel .panel-heading,
+    .leaf-history-panel .panel-heading {
+        width: 100%;
+        max-width: 100%;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .leaf-result-panel .panel-heading span:first-child {
+        font-size: 1.24rem;
+    }
+
+    .leaf-result-panel .result-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .leaf-result-panel .model-card {
+        min-height: auto;
+    }
+
+    .result-summary,
+    .advice-box,
+    .result-model-meta {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .leaf-history-panel .history-list,
+    .detect-page-leaf .history-list {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        overflow: visible;
+        padding: 0;
+        scroll-snap-type: none;
+    }
+
+    .leaf-history-panel .history-item,
+    .detect-page-leaf .history-item {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: auto;
+        flex: none;
+        scroll-snap-align: none;
+        transform: none;
+    }
+
+    .detect-page-leaf .history-item:hover,
+    .detect-page-leaf .history-item:focus-visible {
+        transform: none;
+    }
+
+    .detect-page-leaf .history-item img,
+    .detect-page-leaf .history-image-fallback,
+    .detect-page-fruit .history-item img,
+    .detect-page-fruit .history-image-fallback {
+        width: 100%;
+        height: auto;
+        min-height: 132px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    body.detect-page-entering .detect-hero > *,
+    body.detect-page-entering .result-panel,
+    body.detect-page-entering .history-panel,
+    body.detect-page-entering .upload-zone,
+    body.detect-intro-card .upload-zone,
+    body.detect-intro-copy .detect-hero > *,
+    body.detect-intro-result .result-panel,
+    body.detect-intro-history .history-panel {
+        transform: none;
+    }
+
+    body.page-fruit[data-page-type="fruit"].nav-mode-touch .home-nav {
+        width: min(100% - 24px, 520px);
+        min-height: 54px;
+        top: max(8px, env(safe-area-inset-top));
+        padding: 7px 9px;
+        border-radius: 16px;
+        background-color: rgba(15, 8, 6, 0.78);
+        border-color: rgba(255, 173, 126, 0.16);
+        box-shadow:
+            0 12px 34px rgba(0, 0, 0, 0.34),
+            inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(18px) saturate(1.08);
+    }
+
+    body.page-fruit[data-page-type="fruit"].nav-mode-touch .home-nav .brand {
+        min-height: 38px;
+        gap: 10px;
+    }
+
+    body.page-fruit[data-page-type="fruit"].nav-mode-touch .nav-toggle {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background-color: rgba(255, 236, 220, 0.045);
+        border-color: rgba(255, 211, 172, 0.14);
+    }
+
+    body.page-fruit[data-page-type="fruit"].nav-mode-touch .home-nav .nav-links,
+    body.page-fruit[data-page-type="fruit"].nav-mode-touch .home-nav.is-expanded .nav-links,
+    body.page-fruit[data-page-type="fruit"].nav-mode-touch .home-nav:focus-within .nav-links {
+        top: 66px;
+        background-color: rgba(12, 6, 5, 0.94);
+        border-color: rgba(255, 173, 126, 0.18);
+        box-shadow: 0 24px 56px rgba(0, 0, 0, 0.42);
+        backdrop-filter: blur(18px) saturate(1.06);
+    }
+
+    .detect-page.detect-page-fruit.leaf-studio-page {
+        padding: calc(112px + env(safe-area-inset-top)) 14px 80px;
+    }
+
+    .detect-page-fruit::before {
+        content: none;
+    }
+
+    .detect-page-fruit .leaf-studio-hero {
+        padding: 8px 14px 20px;
+    }
+
+    .detect-page-fruit .leaf-studio-hero .eyebrow {
+        color: rgba(255, 193, 150, 0.66);
+    }
+
+    .detect-page-fruit .leaf-studio-hero h1 {
+        color: rgba(255, 244, 238, 0.9);
+        text-shadow: 0 8px 28px rgba(0, 0, 0, 0.46);
+    }
+
+    .detect-page-fruit .leaf-studio-hero p:not(.eyebrow) {
+        color: rgba(245, 214, 201, 0.62);
+    }
+
+    .detect-page-fruit .leaf-studio-workspace {
+        gap: 22px;
+    }
+
+    .detect-page-fruit .leaf-studio-board.upload-zone,
+    .detect-page-fruit .leaf-result-panel.result-panel,
+    .detect-page-fruit .leaf-history-panel.history-panel {
+        border-color: rgba(255, 178, 132, 0.24);
+        background:
+            linear-gradient(180deg, rgba(28, 11, 8, 0.94), rgba(12, 5, 4, 0.96)),
+            rgba(14, 6, 5, 0.94);
+        box-shadow:
+            0 22px 54px rgba(0, 0, 0, 0.46),
+            0 0 0 1px rgba(255, 178, 132, 0.045),
+            inset 0 1px 0 rgba(255, 255, 255, 0.075);
+        backdrop-filter: blur(12px) saturate(0.98);
+    }
+
+    .detect-page-fruit .leaf-studio-board.upload-zone {
+        padding: 20px;
+        gap: 16px;
+        border-radius: 24px;
+    }
+
+    .detect-page-fruit .leaf-result-panel.result-panel {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .detect-page-fruit .leaf-history-panel.history-panel {
+        padding: 18px;
+        border-radius: 22px;
+        opacity: 0.92;
+    }
+
+    .detect-page-fruit .leaf-studio-board.upload-zone::before,
+    .detect-page-fruit .leaf-studio-board.upload-zone::after {
+        background:
+            linear-gradient(180deg, rgba(33, 12, 8, 0.28), rgba(8, 4, 3, 0.36));
+        opacity: 0.9;
+    }
+
+    .detect-page-fruit .leaf-title-lockup p#fileHint {
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .detect-page-fruit .leaf-title-lockup p#fileHint::after {
+        content: "上传果实图像";
+        display: block;
+        color: rgba(245, 214, 201, 0.64);
+        font-size: 0.86rem;
+        line-height: 1.45;
+    }
+
+    .detect-page-fruit .leaf-upload-canvas.preview-frame {
+        min-height: clamp(312px, 82vw, 440px);
+        border-color: rgba(255, 178, 132, 0.18);
+        background:
+            linear-gradient(180deg, rgba(14, 6, 5, 0.86), rgba(7, 3, 3, 0.92));
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.055),
+            inset 0 0 52px rgba(0, 0, 0, 0.28);
+    }
+
+    .detect-page-fruit .leaf-upload-empty strong {
+        color: rgba(255, 249, 244, 0.94);
+        text-shadow: 0 8px 26px rgba(0, 0, 0, 0.48);
+    }
+
+    .detect-page-fruit .leaf-upload-empty p {
+        font-size: 0;
+        line-height: 0;
+        margin-top: 10px;
+    }
+
+    .detect-page-fruit .leaf-upload-empty p::after {
+        content: "点击按钮选择文件";
+        color: rgba(245, 214, 201, 0.58);
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
+    .detect-page-fruit .leaf-select-action.primary-action {
+        width: min(252px, 100%);
+        min-height: 58px;
+        margin-top: 24px;
+        color: #271006;
+        background: linear-gradient(135deg, #ff8f68 0%, #ffc978 100%);
+        box-shadow:
+            0 18px 38px rgba(0, 0, 0, 0.34),
+            0 10px 26px rgba(255, 126, 84, 0.24),
+            inset 0 1px 0 rgba(255, 255, 255, 0.38);
+    }
+
+    .detect-page-fruit .leaf-upload-empty small {
+        margin-top: 24px;
+        color: rgba(235, 204, 191, 0.42);
+    }
+
+    .detect-page-fruit .leaf-demo-link {
+        margin-top: 10px;
+        color: rgba(255, 190, 152, 0.48);
+        transform: scale(0.94);
+    }
+
+    .detect-page-fruit .leaf-demo-link .demo-visual {
+        opacity: 0.72;
+        filter: saturate(0.84) brightness(0.88);
+    }
+
+    .detect-page-fruit .leaf-result-panel .panel-heading span:first-child {
+        color: rgba(255, 246, 241, 0.94);
+    }
+
+    .detect-page-fruit .leaf-result-panel .result-count {
+        color: rgba(255, 205, 170, 0.82);
+    }
+
+    .detect-page-fruit .leaf-result-panel .result-card {
+        border-color: rgba(255, 178, 132, 0.18);
+        background:
+            linear-gradient(180deg, rgba(18, 7, 5, 0.9), rgba(8, 3, 3, 0.94));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+    }
+
+    .detect-page-fruit .result-summary,
+    .detect-page-fruit .advice-box,
+    .detect-page-fruit .result-model-meta {
+        color: rgba(255, 239, 230, 0.78);
+    }
+}
+
+/* =========================
+   Mobile Responsive Fixes
+   ========================= */
+@media (max-width: 480px) {
+    .detect-page.detect-page-leaf.leaf-studio-page,
+    .detect-page.detect-page-fruit.leaf-studio-page {
+        padding-inline: 12px;
+    }
+
+    .leaf-studio-hero {
+        padding-inline: 12px;
+        padding-bottom: 14px;
+    }
+
+    .leaf-studio-hero h1 {
+        font-size: clamp(1.74rem, 8vw, 2.18rem);
+    }
+
+    .leaf-studio-hero p:not(.eyebrow) {
+        font-size: 0.88rem;
+        line-height: 1.58;
+    }
+
+    .leaf-studio-workspace {
+        gap: 14px;
+        padding-inline: 12px;
+    }
+
+    .leaf-studio-board.upload-zone,
+    .leaf-result-panel.result-panel {
+        padding: 14px;
+        gap: 12px;
+        border-radius: 18px;
+    }
+
+    .leaf-history-panel.history-panel {
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .leaf-board-header {
+        gap: 10px;
+    }
+
+    .leaf-title-lockup {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .leaf-title-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+    }
+
+    .leaf-title-icon::before {
+        width: 25px;
+        height: 30px;
+    }
+
+    .leaf-title-lockup h2 {
+        font-size: clamp(1.32rem, 6.5vw, 1.72rem);
+    }
+
+    .leaf-title-lockup p {
+        font-size: 0.82rem;
+        line-height: 1.42;
+    }
+
+    .leaf-upload-status {
+        min-height: 28px;
+        padding: 0 10px;
+        font-size: 0.74rem;
+    }
+
+    .leaf-control-row {
+        gap: 9px;
+    }
+
+    .leaf-mode-actions {
+        grid-template-columns: minmax(0, 1fr) minmax(84px, 0.55fr);
+        gap: 9px;
+    }
+
+    .leaf-mode-switch label,
+    .leaf-detect-action.detect-button,
+    .leaf-reset-action.clear-inline {
+        min-height: 44px;
+    }
+
+    .leaf-upload-canvas.preview-frame {
+        min-height: clamp(220px, 62vw, 300px);
+        aspect-ratio: 5 / 4;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .leaf-upload-empty {
+        min-height: auto;
+    }
+
+    .leaf-upload-cloud {
+        width: 88px;
+        height: 68px;
+        margin-bottom: 12px;
+        filter: drop-shadow(0 0 10px rgba(120, 230, 162, 0.18));
+    }
+
+    .leaf-upload-cloud svg {
+        width: 72px;
+        height: 56px;
+    }
+
+    .leaf-upload-empty strong {
+        font-size: clamp(1.18rem, 6vw, 1.48rem);
+        line-height: 1.16;
+    }
+
+    .leaf-upload-empty p {
+        margin-top: 8px;
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    .leaf-select-action.primary-action {
+        width: min(210px, 100%);
+        min-height: 46px;
+        margin-top: 16px;
+        padding: 0 16px;
+        border-radius: 15px;
+        font-size: 0.96rem;
+    }
+
+    .leaf-upload-empty small {
+        margin-top: 14px;
+        font-size: 0.68rem;
+        line-height: 1.45;
+    }
+
+    .leaf-demo-link {
+        margin-top: 8px;
+        font-size: 0.82rem;
+    }
+
+    .leaf-demo-link .demo-visual {
+        width: 28px;
+        height: 28px;
+    }
+
+    .leaf-result-panel .panel-heading {
+        margin-bottom: 0;
+    }
+
+    .leaf-result-panel .panel-heading span:first-child {
+        font-size: 1.08rem;
+    }
+
+    .leaf-result-panel .result-card {
+        min-height: auto;
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .result-model-meta {
+        margin-top: 8px;
+        padding: 9px 10px;
+        font-size: 0.78rem;
+    }
+
+    .model-meta-item + .model-meta-item {
+        margin-top: 7px;
+    }
+
+    .model-meta-note {
+        margin-top: 8px;
+        padding-top: 8px;
+        line-height: 1.5;
+    }
+
+    .detection-item {
+        padding: 10px;
+    }
+
+    .detection-confidence {
+        margin-top: 6px;
+        padding: 5px 8px;
+    }
+
+    .history-empty {
+        min-height: 84px;
+        padding: 14px;
+    }
+
+    .detect-page-leaf .history-item img,
+    .detect-page-leaf .history-image-fallback,
+    .detect-page-fruit .history-item img,
+    .detect-page-fruit .history-image-fallback {
+        min-height: 104px;
+    }
+
+    .detect-page.detect-page-fruit.leaf-studio-page {
+        padding: calc(96px + env(safe-area-inset-top)) 12px 56px;
+    }
+
+    .detect-page-fruit .leaf-upload-canvas.preview-frame {
+        min-height: clamp(224px, 64vw, 304px);
+    }
+
+    .detect-page-fruit .leaf-select-action.primary-action {
+        width: min(210px, 100%);
+        min-height: 46px;
+        margin-top: 16px;
+    }
+
+    .detect-page-fruit .leaf-upload-empty small {
+        margin-top: 14px;
+    }
+
+    .detect-page-fruit .leaf-demo-link {
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    body.leaf-detect-body {
+        background-size: cover;
+        background-position: center top;
+    }
+
+    body.leaf-detect-body::before {
+        background-size:
+            cover,
+            cover,
+            cover,
+            auto 100%,
+            cover;
+        background-position:
+            center top,
+            center 78%,
+            86% 24%,
+            center top,
+            center top;
+    }
+
+    body.page-fruit[data-page-type="fruit"] {
+        background-size: cover;
+        background-position: center top;
+    }
+
+    body.page-fruit[data-page-type="fruit"]::before {
+        background-size:
+            cover,
+            cover,
+            cover,
+            auto 100%,
+            cover;
+        background-position:
+            center top,
+            center 78%,
+            86% 22%,
+            center top,
+            center top;
+    }
+
+    .detect-page-fruit.leaf-studio-page::after {
+        height: 280px;
+        background: linear-gradient(to bottom, transparent, rgba(13, 5, 3, 0.72) 46%, #0d0503 100%);
+    }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    body.page-fruit[data-page-type="fruit"]::before {
+        animation: none;
+    }
+}
+
+/* Fine-tune hierarchy for the right-side info cards and history area. */
+.leaf-result-panel .conclusion-card.result-card {
+    opacity: 0.98;
+    border: 1px solid rgba(var(--accent-rgb), 0.22);
+    background:
+        linear-gradient(135deg, rgba(var(--accent-rgb), 0.14), rgba(126, 211, 255, 0.055)),
+        rgba(255, 255, 255, 0.046);
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 -20px 38px rgba(var(--accent-rgb), 0.035);
+}
+
+.leaf-result-panel .advice-card.result-card {
+    opacity: 0.92;
+    border: 1px solid rgba(var(--accent-rgb), 0.16);
+    background:
+        linear-gradient(135deg, rgba(var(--accent-rgb), 0.09), rgba(126, 211, 255, 0.035)),
+        rgba(255, 255, 255, 0.036);
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+.leaf-result-panel .model-card.result-card {
+    opacity: 0.9;
+    border: 1px solid rgba(var(--accent-rgb), 0.12);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(var(--accent-rgb), 0.03)),
+        rgba(255, 255, 255, 0.026);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.038);
+}
+
+.leaf-result-panel .conclusion-card .result-summary {
+    color: rgba(240, 252, 245, 0.96);
+}
+
+.leaf-result-panel .advice-card .advice-box {
+    color: rgba(225, 239, 232, 0.84);
+}
+
+.leaf-result-panel .model-card .panel-kicker {
+    opacity: 0.82;
+}
+
+.leaf-result-panel .model-card .result-model-meta {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.022), rgba(var(--accent-rgb), 0.034)),
+        rgba(255, 255, 255, 0.022);
+    border: 1px solid rgba(var(--accent-rgb), 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.032);
+}
+
+.panel-heading-copy {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+}
+
+.history-panel-note {
+    color: rgba(210, 227, 220, 0.58);
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+.leaf-history-panel.history-panel {
+    border-color: rgba(var(--accent-rgb), 0.18);
+    background:
+        linear-gradient(180deg, rgba(7, 25, 22, 0.34), rgba(2, 10, 12, 0.4)),
+        rgba(4, 15, 16, 0.16);
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09),
+        inset 0 -18px 36px rgba(var(--accent-rgb), 0.02);
+}
+
+.leaf-history-panel .panel-heading {
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.leaf-history-panel .panel-heading button {
+    min-height: 40px;
+    padding: 10px 14px;
+    color: rgba(240, 250, 245, 0.92);
+    background:
+        linear-gradient(135deg, rgba(var(--accent-rgb), 0.16), rgba(126, 211, 255, 0.06)),
+        rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(var(--accent-rgb), 0.28);
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.leaf-history-panel .panel-heading button:hover,
+.leaf-history-panel .panel-heading button:focus-visible {
+    border-color: rgba(var(--accent-rgb), 0.42);
+    background:
+        linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(126, 211, 255, 0.075)),
+        rgba(255, 255, 255, 0.038);
+    box-shadow:
+        0 14px 26px rgba(0, 0, 0, 0.16),
+        0 0 18px rgba(var(--accent-rgb), 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.history-empty {
+    width: 100%;
+    min-height: 120px;
+    display: grid;
+    place-items: center;
+    padding: 18px 20px;
+    color: rgba(214, 230, 223, 0.72);
+    text-align: center;
+    line-height: 1.7;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.028), rgba(var(--accent-rgb), 0.038)),
+        rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(var(--accent-rgb), 0.18);
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .leaf-history-panel .panel-heading {
+        gap: 10px;
+    }
+
+    .leaf-history-panel .panel-heading button {
+        width: auto;
+        min-width: 104px;
+    }
+
+    .history-panel-note {
+        font-size: 0.74rem;
+    }
+}
+
+/* =========================
+   Device Mode Responsive Fixes
+   ========================= */
+body.device-mobile.viewport-tablet {
+    --detect-panel-padding: 20px;
+    --detect-panel-gap: 16px;
+    --detect-preview-min-height: clamp(300px, 54vw, 420px);
+}
+
+body.device-mobile.viewport-phone {
+    --detect-workspace-gap: 14px;
+    --detect-panel-padding: 14px;
+    --detect-panel-gap: 12px;
+    --detect-panel-radius: 18px;
+    --detect-control-gap: 8px;
+    --detect-mode-actions-columns: minmax(0, 1fr) minmax(82px, 0.55fr);
+    --detect-action-min-height: 44px;
+    --detect-preview-min-height: clamp(216px, 60vw, 296px);
+    --detect-preview-ratio: 5 / 4;
+    --detect-preview-padding: 13px;
+    --detect-cloud-width: 82px;
+    --detect-cloud-height: 64px;
+    --detect-cloud-margin: 10px;
+    --detect-cloud-svg-width: 68px;
+    --detect-cloud-svg-height: 52px;
+    --detect-select-width: min(202px, 100%);
+    --detect-select-height: 44px;
+    --detect-select-margin: 14px;
+    --detect-select-padding: 0 14px;
+    --detect-result-card-padding: 11px;
+    --detect-meta-margin: 7px;
+    --detect-meta-padding: 8px 10px;
+    --detect-meta-font-size: 0.77rem;
+    --detect-history-gap: 10px;
+    --detect-history-empty-min-height: 78px;
+    --detect-history-empty-padding: 12px;
+}
+
+body.device-mobile.viewport-phone .detect-page-fruit {
+    --detect-preview-min-height: clamp(220px, 62vw, 300px);
+}
+
+body.device-mobile .detect-page.leaf-studio-page {
+    width: min(100%, calc(100vw - 24px));
+    margin-inline: auto;
+    padding-inline: 0;
+}
+
+body.device-mobile .detect-page.detect-page-leaf.leaf-studio-page,
+body.device-mobile .detect-page.detect-page-fruit.leaf-studio-page {
+    margin-inline: auto;
+}
+
+body.device-mobile .leaf-studio-workspace {
+    grid-template-columns: 1fr;
+    gap: var(--detect-workspace-gap, 16px);
+}
+
+body.device-mobile .leaf-studio-board.upload-zone,
+body.device-mobile .leaf-result-panel.result-panel,
+body.device-mobile .leaf-history-panel.history-panel {
+    border-radius: var(--detect-panel-radius, 20px);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+body.device-mobile .leaf-studio-board.upload-zone {
+    min-height: auto;
+    padding: var(--detect-panel-padding, 18px);
+    grid-template-rows: auto auto auto;
+    gap: var(--detect-panel-gap, 14px);
+}
+
+body.device-mobile .leaf-title-lockup > div {
+    padding-left: 4px;
+}
+
+body.device-mobile .leaf-result-panel.result-panel {
+    min-height: auto;
+    padding: var(--detect-panel-padding, 18px);
+    gap: var(--detect-panel-gap, 14px);
+}
+
+body.device-mobile .leaf-history-panel.history-panel {
+    padding: var(--detect-panel-padding, 18px);
+}
+
+body.device-mobile .leaf-control-row {
+    grid-template-columns: 1fr;
+    gap: var(--detect-control-gap, 10px);
+}
+
+body.device-mobile .leaf-mode-actions {
+    grid-template-columns: var(--detect-mode-actions-columns, minmax(0, 1fr) minmax(88px, 0.5fr));
+    gap: var(--detect-control-gap, 10px);
+}
+
+body.device-mobile .leaf-mode-switch label,
+body.device-mobile .leaf-detect-action.detect-button,
+body.device-mobile .leaf-reset-action.clear-inline {
+    min-height: var(--detect-action-min-height, 50px);
+}
+
+body.device-mobile .leaf-upload-canvas.preview-frame {
+    min-height: var(--detect-preview-min-height, clamp(260px, 52vw, 420px));
+    aspect-ratio: var(--detect-preview-ratio, 16 / 10);
+    padding: var(--detect-preview-padding, 18px);
+    border-radius: var(--detect-preview-radius, 18px);
+}
+
+body.device-mobile .leaf-upload-cloud {
+    width: var(--detect-cloud-width, 104px);
+    height: var(--detect-cloud-height, 82px);
+    margin-bottom: var(--detect-cloud-margin, 14px);
+}
+
+body.device-mobile .leaf-upload-cloud svg {
+    width: var(--detect-cloud-svg-width, 82px);
+    height: var(--detect-cloud-svg-height, 64px);
+}
+
+body.device-mobile .leaf-select-action.primary-action {
+    width: var(--detect-select-width, min(224px, 100%));
+    min-height: var(--detect-select-height, 52px);
+    margin-top: var(--detect-select-margin, 22px);
+    padding: var(--detect-select-padding, 0 20px);
+}
+
+body.device-mobile .leaf-result-panel .panel-heading {
+    margin-bottom: 0;
+}
+
+body.device-mobile .leaf-result-panel .result-card {
+    min-height: auto;
+    padding: var(--detect-result-card-padding, 14px);
+    border-radius: var(--detect-result-card-radius, 15px);
+}
+
+body.device-mobile .leaf-result-panel .model-card {
+    min-height: auto;
+}
+
+body.device-mobile .result-model-meta {
+    margin-top: var(--detect-meta-margin, 10px);
+    padding: var(--detect-meta-padding, 10px 12px);
+    font-size: var(--detect-meta-font-size, inherit);
+}
+
+body.device-mobile .history-list {
+    gap: var(--detect-history-gap, 12px);
+}
+
+body.device-mobile .history-empty {
+    min-height: var(--detect-history-empty-min-height, 92px);
+    padding: var(--detect-history-empty-padding, 14px);
+}
+
+body.device-mobile.viewport-phone .model-meta-item + .model-meta-item {
+    margin-top: 7px;
+}
+
+body.device-mobile.viewport-phone .model-meta-note {
+    margin-top: 7px;
+    padding-top: 7px;
+}
+
+@media (max-width: 768px) {
+    .detect-page.leaf-studio-page {
+        width: min(100%, calc(100vw - 24px));
+        margin-inline: auto;
+        padding-inline: 12px;
+    }
+
+    .leaf-studio-hero {
+        width: 100%;
+        margin-inline: auto;
+        padding: 24px 14px 18px;
+    }
+
+    .leaf-studio-hero .eyebrow,
+    .leaf-studio-hero h1,
+    .leaf-studio-hero p:not(.eyebrow) {
+        padding-left: 4px;
+    }
+
+    .leaf-studio-workspace {
+        width: 100%;
+    }
+
+    .leaf-studio-board.upload-zone,
+    .leaf-result-panel.result-panel,
+    .leaf-history-panel.history-panel {
+        width: 100%;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body.leaf-detect-body .leaf-studio-board.upload-zone,
+    body.leaf-detect-body .leaf-result-panel.result-panel,
+    body.leaf-detect-body .leaf-history-panel.history-panel {
+        background:
+            linear-gradient(180deg, rgba(3, 18, 14, 0.7), rgba(2, 10, 9, 0.74)),
+            linear-gradient(135deg, rgba(126, 242, 165, 0.055), rgba(80, 220, 190, 0.018));
+        backdrop-filter: blur(10px) saturate(1.04);
+    }
+
+    body.leaf-detect-body .leaf-upload-canvas.preview-frame {
+        background:
+            linear-gradient(180deg, rgba(4, 14, 12, 0.56), rgba(2, 9, 8, 0.66)),
+            radial-gradient(circle at 82% 68%, rgba(138, 235, 150, 0.1), transparent 34%);
+    }
+
+}
+
+/* Fruit overlay texture tuning for the final glass pass. */
+.detect-page-fruit .leaf-studio-board.upload-zone::before {
+    opacity: 0.58;
+    background:
+        radial-gradient(circle at 16% 14%, rgba(255, 126, 84, 0.06), transparent 26%),
+        linear-gradient(180deg, rgba(20, 7, 5, 0.035), rgba(12, 5, 5, 0.09));
+}
+
+.detect-page-fruit .leaf-studio-board.upload-zone::after {
+    opacity: 0.64;
+    background:
+        radial-gradient(circle at 23% 17%, rgba(255, 126, 84, 0.04), transparent 24%),
+        radial-gradient(circle at 76% 72%, rgba(255, 154, 82, 0.035), transparent 28%),
+        linear-gradient(180deg, rgba(16, 5, 4, 0.01), rgba(16, 5, 4, 0.055));
+}
+
+/* Fruit final clarity pass: remove heavy dark glass so the fixed background stays visible. */
+.detect-page-fruit .leaf-studio-board.upload-zone,
+.detect-page-fruit .leaf-result-panel.result-panel,
+.detect-page-fruit .leaf-history-panel.history-panel {
+    border-color: rgba(255, 195, 146, 0.2);
+    background:
+        linear-gradient(180deg, rgba(38, 12, 7, 0.28), rgba(12, 4, 3, 0.34)),
+        linear-gradient(135deg, rgba(255, 126, 84, 0.038), rgba(255, 194, 118, 0.012));
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.24),
+        0 0 0 1px rgba(255, 195, 146, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.105);
+    backdrop-filter: blur(8px) saturate(1.18);
+}
+
+.detect-page-fruit .leaf-studio-board.upload-zone::before,
+.detect-page-fruit .leaf-studio-board.upload-zone::after {
+    opacity: 0.22;
+}
+
+.detect-page-fruit .leaf-upload-canvas.preview-frame {
+    border-color: rgba(255, 195, 146, 0.13);
+    background:
+        linear-gradient(180deg, rgba(24, 8, 6, 0.18), rgba(7, 3, 3, 0.26)),
+        radial-gradient(circle at 82% 70%, rgba(255, 132, 72, 0.065), transparent 34%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.055),
+        inset 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.detect-page-fruit .leaf-result-panel .result-card,
+.detect-page-fruit .detection-item,
+.detect-page-fruit .result-model-meta {
+    border-color: rgba(255, 195, 146, 0.13);
+    background:
+        linear-gradient(180deg, rgba(24, 8, 6, 0.2), rgba(8, 3, 3, 0.28)),
+        rgba(255, 126, 84, 0.018);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(7px) saturate(1.12);
+}
+
+.detect-page-fruit.is-mode-enhanced .upload-zone,
+.detect-page-fruit.is-mode-enhanced .result-panel,
+.detect-page-fruit.is-mode-enhanced .history-panel {
+    border-color: rgba(255, 106, 70, 0.3);
+    background:
+        linear-gradient(180deg, rgba(48, 12, 6, 0.28), rgba(13, 3, 3, 0.34)),
+        linear-gradient(125deg, rgba(255, 90, 58, 0.085), rgba(255, 154, 82, 0.022) 42%, transparent 70%);
+    box-shadow:
+        0 20px 54px rgba(0, 0, 0, 0.25),
+        0 0 26px rgba(255, 90, 58, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.105);
+}
+
+.detect-page-fruit.is-mode-enhanced .result-card,
+.detect-page-fruit.is-mode-enhanced .detection-item,
+.detect-page-fruit.is-mode-enhanced .result-model-meta {
+    border-color: rgba(255, 106, 70, 0.22);
+    background:
+        linear-gradient(180deg, rgba(38, 8, 4, 0.22), rgba(10, 3, 3, 0.3)),
+        rgba(255, 90, 58, 0.026);
+}
+
+@media (max-width: 768px) {
+    body.page-fruit[data-page-type="fruit"] .leaf-studio-board.upload-zone,
+    body.page-fruit[data-page-type="fruit"] .leaf-result-panel.result-panel,
+    body.page-fruit[data-page-type="fruit"] .leaf-history-panel.history-panel {
+        border-color: rgba(255, 195, 146, 0.2);
+        background:
+            linear-gradient(180deg, rgba(34, 10, 6, 0.24), rgba(12, 4, 3, 0.32)),
+            linear-gradient(135deg, rgba(255, 126, 84, 0.036), rgba(255, 180, 105, 0.014));
+        box-shadow:
+            0 16px 42px rgba(0, 0, 0, 0.22),
+            0 0 0 1px rgba(255, 195, 146, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(7px) saturate(1.16);
+    }
+
+    body.page-fruit[data-page-type="fruit"] .leaf-upload-canvas.preview-frame {
+        border-color: rgba(255, 195, 146, 0.13);
+        background:
+            linear-gradient(180deg, rgba(20, 7, 4, 0.16), rgba(8, 3, 3, 0.24)),
+            radial-gradient(circle at 82% 70%, rgba(255, 132, 72, 0.06), transparent 34%);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            inset 0 0 24px rgba(0, 0, 0, 0.08);
+    }
+
+    body.page-fruit[data-page-type="fruit"] .leaf-result-panel .result-card,
+    body.page-fruit[data-page-type="fruit"] .detection-item,
+    body.page-fruit[data-page-type="fruit"] .result-model-meta {
+        border-color: rgba(255, 195, 146, 0.12);
+        background:
+            linear-gradient(180deg, rgba(20, 7, 5, 0.18), rgba(8, 3, 3, 0.26)),
+            rgba(255, 126, 84, 0.016);
+        backdrop-filter: blur(6px) saturate(1.1);
+    }
+
+    body.page-fruit[data-page-type="fruit"] .leaf-studio-board.upload-zone::before,
+    body.page-fruit[data-page-type="fruit"] .leaf-studio-board.upload-zone::after {
+        opacity: 0.18;
+    }
+
+    body.page-fruit[data-page-type="fruit"] .detect-page-fruit.is-mode-enhanced .leaf-studio-board.upload-zone,
+    body.page-fruit[data-page-type="fruit"] .detect-page-fruit.is-mode-enhanced .leaf-result-panel.result-panel,
+    body.page-fruit[data-page-type="fruit"] .detect-page-fruit.is-mode-enhanced .leaf-history-panel.history-panel {
+        border-color: rgba(255, 106, 70, 0.28);
+        background:
+            linear-gradient(180deg, rgba(48, 12, 6, 0.24), rgba(13, 3, 3, 0.32)),
+            linear-gradient(125deg, rgba(255, 90, 58, 0.08), rgba(255, 154, 82, 0.02) 42%, transparent 70%);
+        box-shadow:
+            0 18px 46px rgba(0, 0, 0, 0.23),
+            0 0 24px rgba(255, 90, 58, 0.085),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    body.page-fruit[data-page-type="fruit"] .detect-page-fruit.is-mode-enhanced .leaf-result-panel .result-card,
+    body.page-fruit[data-page-type="fruit"] .detect-page-fruit.is-mode-enhanced .detection-item,
+    body.page-fruit[data-page-type="fruit"] .detect-page-fruit.is-mode-enhanced .result-model-meta {
+        border-color: rgba(255, 106, 70, 0.2);
+        background:
+            linear-gradient(180deg, rgba(38, 8, 4, 0.2), rgba(10, 3, 3, 0.28)),
+            rgba(255, 90, 58, 0.024);
+    }
+}
+
+/* Hard stop: fruit upload card must not react visually to mouse hover. */
+.detect-page-fruit .leaf-studio-board.upload-zone,
+.detect-page-fruit .leaf-studio-board.upload-zone:hover {
+    transform: none;
+    transition: none;
+    border-color: rgba(255, 195, 146, 0.2);
+    background:
+        linear-gradient(180deg, rgba(38, 12, 7, 0.28), rgba(12, 4, 3, 0.34)),
+        linear-gradient(135deg, rgba(255, 126, 84, 0.038), rgba(255, 194, 118, 0.012));
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.24),
+        0 0 0 1px rgba(255, 195, 146, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.105);
+}
+
+.detect-page-fruit.is-mode-enhanced .leaf-studio-board.upload-zone,
+.detect-page-fruit.is-mode-enhanced .leaf-studio-board.upload-zone:hover {
+    transform: none;
+    transition: none;
+    border-color: rgba(255, 106, 70, 0.3);
+    background:
+        linear-gradient(180deg, rgba(48, 12, 6, 0.28), rgba(13, 3, 3, 0.34)),
+        linear-gradient(125deg, rgba(255, 90, 58, 0.085), rgba(255, 154, 82, 0.022) 42%, transparent 70%);
+    box-shadow:
+        0 20px 54px rgba(0, 0, 0, 0.25),
+        0 0 26px rgba(255, 90, 58, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.105);
+}
+
+/* Bitmap title card icons for the leaf and fruit detection panels. */
+.leaf-title-icon::before,
+.detect-page-fruit .leaf-title-icon::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    transform: none;
+}

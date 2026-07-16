@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} | Tomato Insight</title>
+    <link rel="icon" type="image/png" href="/static/assets/logo/logo-icon.png">
+    <link rel="stylesheet" href="/static/css/global.css?v={{ global_css_version }}">
+    <link rel="stylesheet" href="/static/css/detect.css?v={{ detect_css_version }}">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+</head>
+<body class="home-body fruit-detect-body page-fruit" data-page-type="fruit" data-nav-animation="enabled">
+    <nav class="site-nav home-nav">
+        <a class="brand" href="/">
+            <img class="brand-logo" src="/static/assets/logo/logo-icon.webp" alt="" width="42" height="42" decoding="async">
+            <span class="brand-wordmark" aria-label="Tomato Insight">
+                <span class="brand-word brand-word-tomato" aria-hidden="true"><span>Tom</span><span class="brand-tomato-a">a</span><span>to</span></span>
+                <span class="brand-word brand-word-insight" aria-hidden="true"><span>Ins</span><span class="brand-insight-i">i</span><span>ght</span></span>
+            </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primaryNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="primaryNav">
+            <a href="/">首页</a>
+            <a href="/leaf">叶片检测</a>
+            <a class="active" href="/fruit">果实检测</a>
+            <a href="/about">项目介绍</a>
+            <a href="/developer">关于我们</a>
+        </div>
+    </nav>
+    <button class="nav-overlay" type="button" aria-label="关闭导航菜单" hidden></button>
+
+    <main class="detect-page detect-page-{{ page_type }} leaf-studio-page" data-page-type="{{ page_type }}" data-detect-label="{{ detect_label }}" data-history-empty="{{ history_empty }}" data-summary-empty="{{ summary_empty }}" data-advice-empty="{{ advice_empty }}">
+        <section class="detect-hero leaf-studio-hero">
+            <p class="eyebrow">{{ page_eyebrow }}</p>
+            <h1>{{ page_title }}</h1>
+            <p>果实识别方向聚焦番茄果实表面典型病害表现，基于约 1,981 张高相关果实图像进行训练，重点提升对果实病斑、腐烂、表面异常等特征的识别能力。</p>
+        </section>
+
+        <section class="detect-workspace leaf-studio-workspace" aria-label="{{ page_title }}工作区">
+            <section class="leaf-studio-board upload-zone" id="uploadZone" aria-label="果实图片上传与识别工作区">
+                <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp">
+
+                <header class="leaf-board-header">
+                    <div class="leaf-title-lockup">
+                        <span class="leaf-title-icon" aria-hidden="true"></span>
+                        <div>
+                            <h2>果实病害检测</h2>
+                            <p id="fileHint">上传清晰果实图像，开始智能检测</p>
+                        </div>
+                    </div>
+                    <small class="leaf-upload-status" id="previewStatus">未上传</small>
+                </header>
+
+                <div class="leaf-control-row">
+                    <fieldset class="detect-mode-switch leaf-mode-switch" aria-label="检测模式">
+                        <legend>检测模式</legend>
+                        <label>
+                            <input type="radio" name="detectMode" value="normal" checked>
+                            <span>普通检测</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="detectMode" value="enhanced">
+                            <span>增强检测</span>
+                        </label>
+                    </fieldset>
+                    <div class="leaf-mode-actions">
+                        <button class="detect-button leaf-detect-action" id="detectBtn" type="button" disabled>{{ detect_label }}</button>
+                        <button class="clear-inline leaf-reset-action" id="clearBtn" type="button">重置</button>
+                    </div>
+                </div>
+
+                <div class="leaf-upload-canvas preview-frame" id="previewFrame">
+                    <img id="previewImage" alt="待识别果实图片预览">
+                    <div class="annotation-layer" id="annotationLayer" aria-hidden="true"></div>
+                    <button class="annotation-toggle" id="annotationToggle" type="button" aria-pressed="true" hidden>隐藏标注</button>
+                    <div class="canvas-loading" aria-hidden="true">
+                        <span></span>
+                        <strong>识别中...</strong>
+                    </div>
+                    <div class="leaf-upload-empty">
+                        <span class="leaf-upload-cloud" aria-hidden="true">
+                            <svg viewBox="0 0 112 88" focusable="false">
+                                <path d="M35.5 66.5H29C17.7 66.5 9 58.3 9 48C9 38.4 16.4 30.5 26 29.7C30.2 18.2 41.2 10 54.2 10C69.2 10 81.5 20.9 83.7 35.2C94.4 36.1 103 44.8 103 55.5C103 61.6 98 66.5 91.8 66.5H76.5" />
+                                <path d="M56 74V42" />
+                                <path d="M44.5 53.5L56 42L67.5 53.5" />
+                            </svg>
+                        </span>
+                        <strong>拖拽文件上传</strong>
+                        <p>或点击下方按钮选择文件</p>
+                        <label class="primary-action leaf-select-action" for="imageInput">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M3.8 7.3C3.8 6.1 4.8 5.1 6 5.1H10.1L12.2 7.5H18C19.2 7.5 20.2 8.5 20.2 9.7V16.8C20.2 18 19.2 19 18 19H6C4.8 19 3.8 18 3.8 16.8V7.3Z" />
+                                <path d="M4.2 10.3H19.8" />
+                            </svg>
+                            <span>选择文件</span>
+                        </label>
+                        <button class="leaf-demo-link" id="demoBtn" type="button" aria-label="载入内置番茄果实示例并开始识别">
+                            <span class="demo-visual demo-tomato-visual" aria-hidden="true"></span>
+                            <span>点击番茄查看示例</span>
+                        </button>
+                        <small>支持 JPG / JPEG / PNG / WEBP，建议上传清晰果实图像。</small>
+                    </div>
+                </div>
+                <div class="toast" id="toast"></div>
+            </section>
+
+            <section class="result-panel leaf-result-panel" aria-labelledby="resultTitle">
+                <div class="panel-heading">
+                    <span id="resultTitle">识别结果</span>
+                    <span class="result-count" id="resultCount">等待上传</span>
+                </div>
+                <article class="result-card conclusion-card">
+                    <span class="panel-kicker">检测结论</span>
+                    <div class="result-summary" id="resultSummary">{{ summary_empty }}</div>
+                </article>
+                <article class="result-card advice-card">
+                    <span class="panel-kicker">管理建议</span>
+                    <div class="advice-box" id="adviceBox">{{ advice_empty }}</div>
+                </article>
+                <article class="result-card model-card">
+                    <span class="panel-kicker">模型与策略</span>
+                    <div class="result-model-meta" id="resultModelMeta">
+                        <div class="model-meta-item">
+                            <span class="model-meta-label">识别模型</span>
+                            <strong class="model-meta-value">YOLO26s｜ONNX Runtime</strong>
+                        </div>
+                        <div class="model-meta-item">
+                            <span class="model-meta-label">运行模式</span>
+                            <strong class="model-meta-value">普通检测</strong>
+                        </div>
+                        <p class="model-meta-note">说明：果实方向基于约 1,981 张高相关果实图像训练，聚焦果面病斑、腐烂与表面异常等典型特征。</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section class="history-panel leaf-history-panel" aria-labelledby="historyTitle">
+            <div class="panel-heading">
+                <div class="panel-heading-copy">
+                    <span id="historyTitle">{{ history_title }}</span>
+                    <small class="history-panel-note">最近识别结果将在此保留，便于回看与对比</small>
+                </div>
+                <button id="clearHistoryBtn" type="button">清空记录</button>
+            </div>
+            <div class="history-list" id="historyList"></div>
+        </section>
+    </main>
+
+    <script src="/static/js/device-detect.js"></script>
+    <script src="/static/js/nav.js?v={{ nav_js_version }}"></script>
+    <script src="/static/js/detect.js?v={{ detect_js_version }}"></script>
+</body>
+</html>
+

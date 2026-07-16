@@ -1,0 +1,13 @@
+Anthracnose
+Blossom_End_Rot
+Catfaced
+Fruit_Cracking
+Healthy_Tomato
+Late_Blight
+Mold
+Spotted_Wilt_Virus
+Stem_End_Rot
+Sun_scald
+Worms
+Golden_blotches
+Blotchy_Ripeness

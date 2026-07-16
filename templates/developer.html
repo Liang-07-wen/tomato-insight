@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 | Tomato Insight</title>
+    <link rel="icon" type="image/png" href="/static/assets/logo/logo-icon.png">
+    <link rel="stylesheet" href="/static/css/global.css?v={{ global_css_version }}">
+    <link rel="stylesheet" href="/static/css/developer.css?v={{ developer_css_version }}">
+    <link rel="stylesheet" href="/static/css/responsive.css?v={{ responsive_css_version }}">
+</head>
+<body class="home-body developer-body" data-nav-animation="enabled">
+    <nav class="site-nav home-nav">
+        <a class="brand" href="/">
+            <img class="brand-logo" src="/static/assets/logo/logo-icon.webp" alt="" width="42" height="42" decoding="async">
+            <span class="brand-wordmark" aria-label="Tomato Insight">
+                <span class="brand-word brand-word-tomato" aria-hidden="true"><span>Tom</span><span class="brand-tomato-a">a</span><span>to</span></span>
+                <span class="brand-word brand-word-insight" aria-hidden="true"><span>Ins</span><span class="brand-insight-i">i</span><span>ght</span></span>
+            </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primaryNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="primaryNav">
+            <a href="/">首页</a>
+            <a href="/leaf">叶片检测</a>
+            <a href="/fruit">果实检测</a>
+            <a href="/about">项目介绍</a>
+            <a class="active" href="/developer">关于我们</a>
+        </div>
+    </nav>
+    <button class="nav-overlay" type="button" aria-label="关闭导航菜单" hidden></button>
+    <div class="developer-bg" aria-hidden="true"></div>
+
+    <main class="developer-page" aria-labelledby="developerTitle">
+        <section class="developer-hero" id="developer-intro">
+            <div class="developer-hero-copy">
+                <p class="developer-kicker">关于我们</p>
+                <h1 id="developerTitle">从模型训练到网页检测的完整实现</h1>
+                <p class="developer-english">Development Process &amp; Team Collaboration</p>
+                <p class="developer-hero-text">围绕数据准备、YOLO 标注、模型训练、ONNX 导出与 Flask 接入，记录 Tomato Insight 从训练数据到网页检测闭环的实现过程。</p>
+            </div>
+            <div class="developer-hero-system" aria-label="研发流程概览">
+                <span class="system-node system-node-input">数据采集</span>
+                <span class="system-node system-node-process">YOLO标注</span>
+                <span class="system-node system-node-model">YOLO26训练</span>
+                <span class="system-node system-node-output">ONNX部署</span>
+                <span class="system-line system-line-a"></span>
+                <span class="system-line system-line-b"></span>
+                <span class="system-line system-line-c"></span>
+            </div>
+            <div class="hero-highlight-grid" aria-label="页面亮点">
+                <article class="developer-card highlight-card">
+                    <span class="card-index">01</span>
+                    <h2>分场景数据构建</h2>
+                    <p>叶片约 12,800 张图像，果实约 1,981 张高相关图像</p>
+                </article>
+                <article class="developer-card highlight-card">
+                    <span class="card-index">02</span>
+                    <h2>训练与部署链路</h2>
+                    <p>YOLO26s / detect / best.pt / ONNX Runtime</p>
+                </article>
+                <article class="developer-card highlight-card">
+                    <span class="card-index">03</span>
+                    <h2>接口结果封装</h2>
+                    <p>类别、置信度、检测框、建议字段统一返回</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="developer-section team-section" aria-labelledby="teamTitle">
+            <div class="section-heading">
+                <p>TEAM RESPONSIBILITY</p>
+                <h2 id="teamTitle">团队角色与职责</h2>
+            </div>
+            <p class="team-section-copy">团队围绕系统实现、模型训练、数据处理、测试记录和技术材料分工协作，支撑项目从数据准备到网页检测的完整落地。</p>
+            <div class="team-triangle">
+                <article class="developer-card team-card team-card-leader">
+                    <span class="team-badge">TEAM ROLE / 项目角色</span>
+                    <h3>项目统筹与前后端</h3>
+                    <span class="role-label">系统设计 / 前后端联调 / 技术说明</span>
+                    <strong>整体方案规划 / 检测流程整合 / 接口联调记录</strong>
+                    <p>负责项目整体方案规划，协调检测流程、Flask 接口、结果展示与页面说明逻辑，并整理技术说明材料，确保系统从上传、推理、标注到展示形成完整闭环。</p>
+                </article>
+                <article class="developer-card team-card team-card-vision">
+                    <span class="team-badge">VISION &amp; MODEL</span>
+                    <h3>模型训练与数据处理</h3>
+                    <span class="role-label">数据整理 / YOLO 标注 / 模型训练评估</span>
+                    <strong>样本清洗 / 标注规范 / YOLO26 训练 / ONNX 导出</strong>
+                    <p>负责番茄叶片与果实病害数据整理、类别标签维护、训练集与验证集划分、YOLO26 模型训练、权重迭代与识别效果评估。</p>
+                </article>
+                <article class="developer-card team-card team-card-docs">
+                    <span class="team-badge">DOCS &amp; TEST</span>
+                    <h3>文档测试与技术材料支持</h3>
+                    <span class="role-label">资料收集 / 页面测试 / 文案整理</span>
+                    <strong>资料辅助收集 / 技术内容补充 / 测试记录整理</strong>
+                    <p>负责项目相关资料辅助收集、测试用例记录、页面测试反馈、技术内容补充、材料校对与说明文案整理。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="developer-section process-section" aria-labelledby="processTitle">
+            <div class="section-heading">
+                <p>DEVELOPMENT PATH</p>
+                <h2 id="processTitle">从需求到结果的完整开发路径</h2>
+            </div>
+            <p class="section-note">按研发执行顺序记录从数据整理到网页端联调的关键节点，便于理解系统落地路径。</p>
+            <ol class="process-timeline">
+                <li class="developer-card process-card expandable-card process-expand-card">
+                    <span class="step-number">01</span>
+                    <h3>数据集准备</h3>
+                    <p class="card-detail">按叶片与果实两类场景分别整理训练数据，叶片方向覆盖复杂病虫害纹理，果实方向聚焦典型果面异常特征。</p>
+                    <button class="detail-toggle" type="button" aria-expanded="false">展开详情</button>
+                </li>
+                <li class="developer-card process-card">
+                    <span class="step-number">02</span>
+                    <h3>YOLO格式标注</h3>
+                    <p class="card-detail">结合类别完整性、图像质量与场景多样性检查，建立 YOLO 标签文件与检测框坐标。</p>
+                </li>
+                <li class="developer-card process-card">
+                    <span class="step-number">03</span>
+                    <h3>训练配置</h3>
+                    <p class="card-detail">通过 data.yaml 配置训练集、验证集、测试集路径以及所有类别名称。</p>
+                </li>
+                <li class="developer-card process-card">
+                    <span class="step-number">04</span>
+                    <h3>模型训练</h3>
+                    <p class="card-detail">使用 Ultralytics YOLO26 目标检测流程进行训练，让模型同时学习病害类别、纹理特征与目标位置。</p>
+                </li>
+                <li class="developer-card process-card">
+                    <span class="step-number">05</span>
+                    <h3>验证与导出</h3>
+                    <p class="card-detail">训练结果保存到 runs/detect，生成 best.pt 和 last.pt，并选用 best.pt 导出 ONNX。</p>
+                </li>
+                <li class="developer-card process-card">
+                    <span class="step-number">06</span>
+                    <h3>网页端联调</h3>
+                    <p class="card-detail">后端加载 ONNX 模型，接入两种图像增强检测模式，提升识别稳定性，并完成结果封装与前端展示。</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="developer-section training-section" aria-labelledby="trainingTitle">
+            <div class="section-heading">
+                <p>MODEL TRAINING RECORD</p>
+                <h2 id="trainingTitle">模型训练细节补充</h2>
+            </div>
+            <p class="section-note">围绕数据构建、检测任务、训练配置和部署表现补充模型侧实现记录。</p>
+            <div class="training-detail-grid">
+                <article class="developer-card training-detail-card expandable-card">
+                    <span class="card-index">DATA</span>
+                    <h3>数据构建</h3>
+                    <p class="card-summary">按叶片与果实两类场景整理训练数据。</p>
+                    <p class="card-detail">项目按叶片与果实两类场景分别整理训练数据。叶片方向数据规模更大，用于覆盖复杂病虫害纹理与多样化叶面表现；果实方向数据更聚焦，用于提升典型果实异常特征的检测效果。</p>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+                <article class="developer-card training-detail-card expandable-card">
+                    <span class="card-index">TASK</span>
+                    <h3>detect目标检测</h3>
+                    <p class="card-summary">同时学习病害类别与图像区域位置。</p>
+                    <p class="card-detail">模型任务为目标检测，不只判断图片类别，还定位病害在图像中的区域。</p>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+                <article class="developer-card training-detail-card expandable-card">
+                    <span class="card-index">PARAM</span>
+                    <h3>训练参数</h3>
+                    <p class="card-summary">统一输入与多轮训练，筛选稳定权重。</p>
+                    <p class="card-detail">采用统一输入尺寸与多轮训练配置，在本地训练环境下保持过程稳定，并结合验证表现筛选可部署权重。</p>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+                <article class="developer-card training-detail-card expandable-card">
+                    <span class="card-index">OUTPUT</span>
+                    <h3>表现与部署</h3>
+                    <p class="card-summary">测试样例表现稳定，支撑网页端部署。</p>
+                    <p class="card-detail">模型在测试样例中表现稳定，识别准确率较高，可辅助完成番茄病害初筛，检测结果具备较好的参考价值。</p>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="developer-section stack-section" aria-labelledby="stackTitle">
+            <div class="section-heading">
+                <p>MODULE BOUNDARY</p>
+                <h2 id="stackTitle">模块实现与职责边界</h2>
+            </div>
+            <p class="section-note">将系统拆分为数据、模型、接口、前端和测试文档层，明确每一层承担的工作范围。</p>
+            <div class="stack-map" aria-label="模块实现与职责边界架构板">
+                <article class="stack-module" data-layer="DATA" data-index="01">
+                    <div class="stack-module-meta">
+                        <span class="stack-index">01</span>
+                        <span class="stack-chip">DATA</span>
+                    </div>
+                    <h3>数据整理层</h3>
+                    <p>样本归类、标签维护、训练/验证集划分。</p>
+                </article>
+                <article class="stack-module" data-layer="MODEL" data-index="02">
+                    <div class="stack-module-meta">
+                        <span class="stack-index">02</span>
+                        <span class="stack-chip">MODEL</span>
+                    </div>
+                    <h3>模型训练层</h3>
+                    <p>YOLO26s 配置、权重迭代、ONNX 导出。</p>
+                </article>
+                <article class="stack-module" data-layer="API" data-index="03">
+                    <div class="stack-module-meta">
+                        <span class="stack-index">03</span>
+                        <span class="stack-chip">API</span>
+                    </div>
+                    <h3>接口服务层</h3>
+                    <p>Flask 接收图片、调用模型、封装结果。</p>
+                </article>
+                <article class="stack-module" data-layer="UI" data-index="04">
+                    <div class="stack-module-meta">
+                        <span class="stack-index">04</span>
+                        <span class="stack-chip">UI</span>
+                    </div>
+                    <h3>前端交互层</h3>
+                    <p>上传预览、检测触发、结果渲染与反馈。</p>
+                </article>
+                <article class="stack-module stack-module-qa" data-layer="QA" data-index="05">
+                    <div class="stack-module-meta">
+                        <span class="stack-index">05</span>
+                        <span class="stack-chip">QA</span>
+                    </div>
+                    <h3>测试文档层</h3>
+                    <p>流程自检、样例记录、技术说明校对。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="developer-section logic-section" aria-labelledby="logicTitle">
+            <div class="section-heading">
+                <p>SYSTEM LOGIC</p>
+                <h2 id="logicTitle">系统如何完成一次检测</h2>
+            </div>
+            <p class="section-note">一次检测由上传、校验、接口接收、模型推理、结果封装和前端反馈组成。</p>
+            <div class="logic-stage-grid" aria-label="系统检测逻辑闭环">
+                <article class="logic-stage logic-stage-input expandable-card">
+                    <div class="logic-stage-head">
+                        <span class="logic-stage-index">01</span>
+                        <div>
+                            <h3>输入准备</h3>
+                            <p class="logic-stage-summary">用户提交叶片或果实图像，前端完成预览、格式校验与检测准备。</p>
+                        </div>
+                    </div>
+                    <ul class="logic-step-tags" aria-label="输入准备子步骤">
+                        <li>用户上传图片</li>
+                        <li>前端预览与校验</li>
+                    </ul>
+                    <div class="logic-stage-detail">
+                        <ol>
+                            <li>
+                                <strong>用户上传图片</strong>
+                                <span>用户选择待检测图片，页面进入预览与检测准备状态。</span>
+                            </li>
+                            <li>
+                                <strong>前端预览与校验</strong>
+                                <span>前端读取图片信息，完成格式校验、预览渲染和检测按钮状态更新。</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+                <article class="logic-stage logic-stage-inference expandable-card">
+                    <div class="logic-stage-head">
+                        <span class="logic-stage-index">02</span>
+                        <div>
+                            <h3>识别处理</h3>
+                            <p class="logic-stage-summary">后端接收图片并调用 ONNX Runtime 推理，再输出类别、检测框与结构化结果。</p>
+                        </div>
+                    </div>
+                    <ul class="logic-step-tags" aria-label="识别处理子步骤">
+                        <li>/detect 接收图片</li>
+                        <li>ONNX Runtime 推理</li>
+                        <li>输出类别与检测框</li>
+                        <li>结果结构化封装</li>
+                    </ul>
+                    <div class="logic-stage-detail">
+                        <ol>
+                            <li>
+                                <strong>/detect 接收图片</strong>
+                                <span>Flask 接口接收上传图片、检测类型与增强模式，并进入统一检测流程。</span>
+                            </li>
+                            <li>
+                                <strong>ONNX Runtime 推理</strong>
+                                <span>后端调用已接入的 ONNX 模型，对图像中的疑似病害区域进行推理。</span>
+                            </li>
+                            <li>
+                                <strong>输出类别与检测框</strong>
+                                <span>模型输出被整理为类别名称、置信度和检测框坐标，供前端绘制标注。</span>
+                            </li>
+                            <li>
+                                <strong>结果结构化封装</strong>
+                                <span>后端将检测结果转换为统一 JSON，包含摘要、建议、框选信息和历史记录字段。</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+                <article class="logic-stage logic-stage-feedback expandable-card">
+                    <div class="logic-stage-head">
+                        <span class="logic-stage-index">03</span>
+                        <div>
+                            <h3>结果反馈</h3>
+                            <p class="logic-stage-summary">前端展示识别结果，并沉淀历史记录与建议反馈，方便回看和复盘。</p>
+                        </div>
+                    </div>
+                    <ul class="logic-step-tags" aria-label="结果反馈子步骤">
+                        <li>前端展示识别结果</li>
+                        <li>历史记录与建议反馈</li>
+                    </ul>
+                    <div class="logic-stage-detail">
+                        <ol>
+                            <li>
+                                <strong>前端展示识别结果</strong>
+                                <span>页面根据返回结果绘制识别框，更新结论、建议、置信度和检测状态。</span>
+                            </li>
+                            <li>
+                                <strong>历史记录与建议反馈</strong>
+                                <span>检测完成后将结果加入历史记录，并保留处理建议，方便样例对比与过程复盘。</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <button class="detail-toggle" type="button" aria-expanded="false">查看详情</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="developer-section summary-section" aria-labelledby="summaryTitle">
+            <div class="summary-copy">
+                <div class="section-heading">
+                    <p>PROJECT SUMMARY</p>
+                    <h2 id="summaryTitle">持续迭代的农业图像识别原型</h2>
+                </div>
+                <p>我们希望 Tomato Insight 不只是一次模型调用，而是一套流程清晰、接口可复用、结果可追踪、便于继续迭代的农业图像识别应用原型。</p>
+            </div>
+            <div class="summary-grid">
+                <article class="developer-card summary-card">
+                    <h3>可扩展</h3>
+                    <p>后续可继续扩展类别、替换更高精度权重或训练更多作物模型。</p>
+                </article>
+                <article class="developer-card summary-card">
+                    <h3>可维护</h3>
+                    <p>前后端接口结构清晰，检测流程可运行，便于继续开发和问题定位。</p>
+                </article>
+                <article class="developer-card summary-card">
+                    <h3>可复盘</h3>
+                    <p>检测流程、训练路径和联调记录都可解释，适合支撑研发说明与技术说明材料。</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/device-detect.js?v={{ device_detect_js_version }}"></script>
+    <script src="/static/js/nav.js?v={{ nav_js_version }}"></script>
+    <script src="/static/js/developer.js?v={{ developer_js_version }}"></script>
+</body>
+</html>
