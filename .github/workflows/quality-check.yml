@@ -40,3 +40,18 @@ jobs:
           node --check static/js/about.js
           node --check static/js/developer.js
           node --check static/js/device-detect.js
+
+      - name: Check PowerShell deployment script
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            (Resolve-Path "./scripts/deploy-huggingface-space.ps1"),
+            [ref]$tokens,
+            [ref]$errors
+          ) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | Format-List
+            exit 1
+          }
