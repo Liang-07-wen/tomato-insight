@@ -11,7 +11,9 @@
 [![Git LFS](https://img.shields.io/badge/Models-Git%20LFS-F64935?logo=git)](https://git-lfs.com/)
 [![Quality Check](https://github.com/Liang-07-wen/tomato-insight/actions/workflows/quality-check.yml/badge.svg)](https://github.com/Liang-07-wen/tomato-insight/actions/workflows/quality-check.yml)
 
-[界面预览](#页面展示) · [Docker 部署](#docker-部署) · [Hugging Face Spaces](docs/HUGGINGFACE_SPACES.md) · [接口说明](docs/API.md) · [版本记录](CHANGELOG.md)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Liang-07-wen/tomato-insight)
+
+[界面预览](#页面展示) · [Render 部署](#render-部署) · [Docker 部署](#docker-部署) · [接口说明](docs/API.md) · [版本记录](CHANGELOG.md)
 </div>
 
 ## 项目简介
@@ -104,7 +106,7 @@ flowchart LR
 | 模型推理 | YOLO26、ONNX、ONNX Runtime |
 | 图像处理 | Pillow、OpenCV、NumPy |
 | 前端 | HTML、CSS、JavaScript |
-| 部署 | Gunicorn、Docker、Hugging Face Spaces |
+| 部署 | Gunicorn、Docker、Render |
 | 模型管理 | Git LFS |
 
 ## 项目结构
@@ -115,9 +117,9 @@ tomato-insight/
 ├─ yolo26_detector.py         # ONNX 模型加载与推理
 ├─ requirements.txt           # 兼容版本依赖
 ├─ requirements-lock.txt      # 本地验收环境的固定版本
-├─ Dockerfile                 # Docker 与 Spaces 运行镜像
+├─ Dockerfile                 # Docker 与云平台运行镜像
+├─ render.yaml                # Render Blueprint 配置
 ├─ .dockerignore              # Docker 构建排除规则
-├─ deploy/huggingface/        # Hugging Face Space 项目卡
 ├─ models/
 │  ├─ leaf/                   # 叶片模型与类别配置
 │  └─ fruit/                  # 果实模型与类别配置
@@ -131,7 +133,7 @@ tomato-insight/
 │  ├─ uploads/                # 运行时上传目录
 │  └─ results/                # 运行时结果目录
 ├─ scripts/                   # 部署辅助脚本
-└─ docs/                      # 接口、部署文档与仓库截图
+└─ docs/                      # 接口、Render 部署文档与仓库截图
 ```
 
 ## 本地运行
@@ -223,16 +225,27 @@ http://127.0.0.1:7860/
 
 容器使用 Gunicorn 启动 Flask 应用，并以普通用户身份运行。上传图片、检测结果和历史记录保存在容器临时文件系统中，容器删除或云端实例重启后会重新开始。
 
-## Hugging Face Spaces 部署
+## Render 部署
 
-项目已经提供 Docker Space 所需配置和部署脚本。完成 Hugging Face 登录后执行：
+项目已提供 `render.yaml` 和支持动态端口的 Dockerfile，可直接通过 GitHub 仓库部署：
 
-```powershell
-hf auth login
-.\scripts\deploy-huggingface-space.ps1 -SpaceId "你的用户名/tomato-insight"
-```
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Liang-07-wen/tomato-insight)
 
-脚本会创建公开 Docker Space、生成 Spaces 专用项目卡并上传网站代码与两个 ONNX 模型。详细步骤参见 [`docs/HUGGINGFACE_SPACES.md`](docs/HUGGINGFACE_SPACES.md)。
+部署时建议使用以下配置：
+
+- Runtime：Docker
+- Branch：`main`
+- Region：Singapore
+- Plan：Free
+- Health Check Path：`/`
+
+Render 会自动构建镜像，并通过环境变量 `PORT` 指定网站监听端口。详细步骤参见 [`docs/RENDER.md`](docs/RENDER.md)。
+
+> Render 免费服务长时间没有访问时会休眠，首次重新访问需要等待唤醒；实例文件系统属于临时存储，重新部署后上传图片、检测结果和历史记录可能重置。
+
+## 其他部署方式
+
+仓库仍保留 Hugging Face Docker Space 的配置和部署脚本，详细步骤参见 [`docs/HUGGINGFACE_SPACES.md`](docs/HUGGINGFACE_SPACES.md)。
 
 ## 模型配置
 
@@ -268,7 +281,7 @@ DELETE /history
 - 叶片与果实图片检测链路已完成。
 - 视频检测功能已移除。
 - 支持 JPG、JPEG、PNG、WEBP 图片。
-- 已完成本地功能验收、Docker 部署配置和桌面端、移动端页面适配。
+- 已完成本地功能验收、Docker 与 Render 部署配置，以及桌面端、移动端页面适配。
 
 ## 使用说明
 

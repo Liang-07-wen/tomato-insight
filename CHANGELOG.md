@@ -5,6 +5,8 @@
 ## Unreleased
 
 - 增加 Dockerfile 与容器运行配置。
+- 增加 Render Blueprint、一键部署入口和部署说明。
+- Docker 启动命令支持通过 `PORT` 环境变量动态选择监听端口。
 - 增加 Hugging Face Docker Space 部署脚本和使用文档。
 - 移除已失效的固定服务器体验地址，保留本地与云平台部署方式。
 
